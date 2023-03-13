@@ -20,7 +20,7 @@ public class Particles : MonoBehaviour
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             click.transform.position = clickPosition;
-            click.Emit(1);
+            click.Play();
         }
     }
 }
