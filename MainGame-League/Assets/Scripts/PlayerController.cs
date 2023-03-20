@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     NavMeshAgent champ;
+    public float speed;
 
     void Start()
     {
         champ = GetComponent<NavMeshAgent>();
-        
+        champ.speed += speed;
     }
 
     // Update is called once per frame
@@ -25,5 +26,6 @@ public class PlayerController : MonoBehaviour
                 champ.destination = hit.point;
             }
         }
+        
     }
 }
