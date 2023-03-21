@@ -5535,6 +5535,7 @@ GameObject:
   - component: {fileID: 1379070070}
   - component: {fileID: 1379070072}
   - component: {fileID: 1379070076}
+  - component: {fileID: 1379070077}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5670,6 +5671,38 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1379070077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379070069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2691370d9989642b23fa23f873f852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 560
+  healthReg: 8
+  healthScale: 110
+  healthRegScale: 4
+  mana: 320
+  manaReg: 7
+  manaScale: 60
+  manaRegScale: 2
+  attackDmg: 60
+  attackPower: 0
+  attackDmgScale: 12
+  attackSpeed: 0.65
+  attackSpeedScale: 0.05
+  critChance: 0
+  armor: 28
+  magicRes: 32
+  armorScale: 6
+  magicResScale: 7
+  moveSpeed: 340
+  moveSpeedScale: 5
 --- !u!1 &1384706617
 GameObject:
   m_ObjectHideFlags: 0
