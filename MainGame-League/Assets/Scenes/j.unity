@@ -555,6 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5341209953956638063, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
+    - {fileID: 4783806239431024407, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
 --- !u!1001 &182243972
 PrefabInstance:
@@ -864,6 +865,7 @@ GameObject:
   - component: {fileID: 259609968}
   - component: {fileID: 259609967}
   - component: {fileID: 259609966}
+  - component: {fileID: 259609969}
   m_Layer: 0
   m_Name: BushMid 4 (2)
   m_TagString: Untagged
@@ -945,6 +947,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259609964}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &259609969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259609964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280352535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4142215202734221512, guid: 7f9008489d07b494fb8ae58439666110,
@@ -1513,6 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5341209953956638063, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
+    - {fileID: 4783806239431024407, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
 --- !u!1001 &461555117
 PrefabInstance:
@@ -1729,6 +1744,7 @@ GameObject:
   - component: {fileID: 492441813}
   - component: {fileID: 492441812}
   - component: {fileID: 492441811}
+  - component: {fileID: 492441814}
   m_Layer: 0
   m_Name: BushMid 4 (1)
   m_TagString: Untagged
@@ -1810,6 +1826,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492441809}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &492441814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492441809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &501369260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1850,7 @@ GameObject:
   - component: {fileID: 501369264}
   - component: {fileID: 501369263}
   - component: {fileID: 501369262}
+  - component: {fileID: 501369265}
   m_Layer: 0
   m_Name: 'BushRedTop '
   m_TagString: Untagged
@@ -1903,6 +1932,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501369260}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &501369265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501369260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &508527237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1995,6 +2036,7 @@ GameObject:
   - component: {fileID: 520778940}
   - component: {fileID: 520778939}
   - component: {fileID: 520778938}
+  - component: {fileID: 520778941}
   m_Layer: 0
   m_Name: BushMid 3
   m_TagString: Untagged
@@ -2076,6 +2118,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520778936}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &520778941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520778936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &529317084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4142215202734221512, guid: 7f9008489d07b494fb8ae58439666110,
@@ -2496,6 +2550,7 @@ GameObject:
   - component: {fileID: 586240163}
   - component: {fileID: 586240162}
   - component: {fileID: 586240161}
+  - component: {fileID: 586240164}
   m_Layer: 0
   m_Name: BushMid 1
   m_TagString: Untagged
@@ -2577,6 +2632,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586240159}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &586240164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586240159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &603764235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2741,6 +2808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5341209953956638063, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
+    - {fileID: 4783806239431024407, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
 --- !u!4 &621330982 stripped
 Transform:
@@ -3393,6 +3461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737961451110410271, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
+    - {fileID: 8838315590989948639, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
 --- !u!1001 &844895474
 PrefabInstance:
@@ -4042,6 +4111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5341209953956638063, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
+    - {fileID: 4783806239431024407, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
 --- !u!1001 &978561191
 PrefabInstance:
@@ -4601,6 +4671,7 @@ GameObject:
   - component: {fileID: 1095611534}
   - component: {fileID: 1095611533}
   - component: {fileID: 1095611532}
+  - component: {fileID: 1095611536}
   m_Layer: 0
   m_Name: BushBlueTop
   m_TagString: Untagged
@@ -4682,6 +4753,18 @@ Transform:
   m_Father: {fileID: 1231283600}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 8.01, z: 0}
+--- !u!114 &1095611536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095611531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1114843538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5136,6 +5219,8 @@ GameObject:
   - component: {fileID: 1338874276}
   - component: {fileID: 1338874275}
   - component: {fileID: 1338874274}
+  - component: {fileID: 1338874277}
+  - component: {fileID: 1338874278}
   m_Layer: 0
   m_Name: BushMid 4
   m_TagString: Untagged
@@ -5217,6 +5302,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338874272}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1338874277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338874272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1338874278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338874272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1363019635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5301,6 +5410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737961451110410271, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
+    - {fileID: 8838315590989948639, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
 --- !u!1001 &1367478831
 PrefabInstance:
@@ -5421,13 +5531,13 @@ GameObject:
   - component: {fileID: 1379070075}
   - component: {fileID: 1379070074}
   - component: {fileID: 1379070073}
-  - component: {fileID: 1379070072}
   - component: {fileID: 1379070071}
   - component: {fileID: 1379070070}
+  - component: {fileID: 1379070072}
   - component: {fileID: 1379070076}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5459,7 +5569,7 @@ NavMeshAgent:
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 350
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -5467,20 +5577,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &1379070072
-CapsuleCollider:
+--- !u!54 &1379070072
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379070069}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &1379070073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5544,22 +5656,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1379070076
-Rigidbody:
+--- !u!136 &1379070076
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379070069}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1384706617
 GameObject:
   m_ObjectHideFlags: 0
@@ -6103,6 +6213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737961451110410271, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
+    - {fileID: 8838315590989948639, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
 --- !u!1 &1520523532 stripped
 GameObject:
@@ -6726,8 +6837,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4107842182881593930, guid: 1b135131471d35f46bca0aa21ab2f031,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107842182881593930, guid: 1b135131471d35f46bca0aa21ab2f031,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107842182881593930, guid: 1b135131471d35f46bca0aa21ab2f031,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 101
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737961451110410271, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
+    - {fileID: 8838315590989948639, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b135131471d35f46bca0aa21ab2f031, type: 3}
 --- !u!1001 &1659114286
 PrefabInstance:
@@ -6821,6 +6948,7 @@ GameObject:
   - component: {fileID: 1700249335}
   - component: {fileID: 1700249334}
   - component: {fileID: 1700249333}
+  - component: {fileID: 1700249336}
   m_Layer: 0
   m_Name: BushMid 2
   m_TagString: Untagged
@@ -6902,6 +7030,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700249331}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1700249336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700249331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bda61925f077d4ebceb28e97bf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1701044398 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4142215202734221512, guid: 7f9008489d07b494fb8ae58439666110,
@@ -8182,6 +8322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5341209953956638063, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
+    - {fileID: 4783806239431024407, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f032767f64a9d4e992d3fb75af206b, type: 3}
 --- !u!1001 &2006121758
 PrefabInstance:
