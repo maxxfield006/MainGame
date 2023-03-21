@@ -19,6 +19,6 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         //makes the camera only follow the x and z, so when moving it doesnt rotate the camera or change the height
-        transform.position = new Vector3(player.transform.position.x + offsetX, 8.5f, player.transform.position.z + offsetZ);
+        transform.position = new Vector3(player.transform.position.x + offsetX, 9.5f, player.transform.position.z + offsetZ);
     }
 }
