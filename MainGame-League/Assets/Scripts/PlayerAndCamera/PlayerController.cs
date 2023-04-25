@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     NavMeshAgent champ;
     public float speed;
+    public Animator animations;
 
     void Start()
     {
         champ = GetComponent<NavMeshAgent>();
+        animations = GetComponent<Animator>();
         champ.speed += speed;
     }
 
@@ -25,6 +27,15 @@ public class PlayerController : MonoBehaviour
             {
                 champ.destination = hit.point;
             }
+        }
+
+        if (champ.speed > 0)
+        {
+            animations.Speed = 1;
+        }
+        else
+        {
+            animations.Speed = 0;
         }
         
     }
