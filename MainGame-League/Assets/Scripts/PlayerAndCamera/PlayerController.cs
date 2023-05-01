@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     NavMeshAgent champ;
     public float speed;
     public Animator animations;
+    public Rigidbody rb;
 
     void Start()
     {
         champ = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
         animations = GetComponent<Animator>();
         champ.speed += speed;
     }
@@ -29,14 +31,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (champ.speed > 0)
+        if (Input.GetMouseButtonDown(1)) 
         {
-            animations.Speed = 1;
+            animations.SetBool("moving", true);
         }
-        else
+        else if (Input.GetMouseButtonDown(0))
         {
-            animations.Speed = 0;
+            animations.SetBool("moving", false);
         }
-        
     }
 }
