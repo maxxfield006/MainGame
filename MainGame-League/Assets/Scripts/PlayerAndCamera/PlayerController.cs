@@ -10,17 +10,23 @@ public class PlayerController : MonoBehaviour
     public Animator animations;
     public Rigidbody rb;
 
+    Vector3 startPos;
+
     void Start()
     {
         champ = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         animations = GetComponent<Animator>();
         champ.speed += speed;
+
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        Vector3 endPos = startPos - rb.transform.position;
+
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -31,13 +37,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1)) 
+        Debug.Log(rb.transform.position);
+
+        while (endPos.x > 0) 
         {
             animations.SetBool("moving", true);
         }
-        else if (Input.GetMouseButtonDown(0))
+        if (endPos.x == 0)
         {
             animations.SetBool("moving", false);
         }
+
+        startPos = rb.transform.position;
     }
 }

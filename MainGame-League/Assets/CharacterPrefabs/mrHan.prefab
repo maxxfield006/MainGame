@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 31855832409211839}
   - component: {fileID: 3589382283673447773}
   - component: {fileID: 8169081944232444843}
+  - component: {fileID: 1668063226}
   m_Layer: 0
   m_Name: Ch36
   m_TagString: Untagged
@@ -551,6 +552,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetX: 0
   offsetZ: -5.25
+  offsetY: 0
+--- !u!95 &1668063226
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020914812267790119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2059246735455600937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2198,9 @@ GameObject:
   - component: {fileID: 8169081944982138165}
   - component: {fileID: 8169081944982138164}
   - component: {fileID: 8169081944982138166}
+  - component: {fileID: 2323615453101688355}
   m_Layer: 0
-  m_Name: Player
+  m_Name: mrHan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2262,6 +2284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  animations: {fileID: 2323615453101688355}
+  rb: {fileID: 8169081944982138160}
 --- !u!195 &8169081944982138166
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2284,6 +2308,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &2323615453101688355
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051955352239913250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a39197f7ade961540b7a4a273187b5c7, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8169081944351403432
 PrefabInstance:
   m_ObjectHideFlags: 0
