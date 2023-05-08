@@ -15,7 +15,7 @@ public class LoadinScreen : MonoBehaviour
         Button startBtn = startButton.GetComponent<Button>();
         RawImage image = img.GetComponent<RawImage>();
 
-        startBtn.onClick.AddListener(lowerOpacity);
+        startBtn.onClick.AddListener(lowerOpacity(image));
         
     }
 
@@ -25,8 +25,8 @@ public class LoadinScreen : MonoBehaviour
         
     }
 
-    void lowerOpacity()
+    void lowerOpacity(RawImage imageVar)
     {
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 1f);
+        imageVar.color = new Color(imageVar.color.r, imageVar.color.g, imageVar.color.b, 1f);
     }
 }
