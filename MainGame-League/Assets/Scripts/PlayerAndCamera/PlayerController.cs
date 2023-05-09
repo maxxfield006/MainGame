@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Debug.Log(rb.transform.position);
 
         while (endPos.x > 0) 
         {

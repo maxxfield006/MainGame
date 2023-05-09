@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 
 public class LoadinScreen : MonoBehaviour
@@ -17,14 +18,9 @@ public class LoadinScreen : MonoBehaviour
         register.SetActive(false);
     }
 
-    void hideBackground(GameObject bckGround)
-    {
-        bckGround.SetActive(false);
-    }
-
     public void OnStartButtonClick()
     {
-        hideBackground(background);
+        background.SetActive(false);
         start.SetActive(false);
         login.SetActive(true);
     }
