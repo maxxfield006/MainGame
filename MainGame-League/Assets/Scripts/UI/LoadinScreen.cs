@@ -6,27 +6,26 @@ using UnityEngine.UI;
 
 public class LoadinScreen : MonoBehaviour
 {
-    public Button startButton;
-    public RawImage img;
-
-    // Start is called before the first frame update
+    public GameObject background;
+    public GameObject start;
+    public GameObject login;
+     
     void Start()
     {
-        Button startBtn = startButton.GetComponent<Button>();
-        RawImage image = img.GetComponent<RawImage>();
-
-        startBtn.onClick.AddListener(lowerOpacity(image));
-        
+        login.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void hideBackground(GameObject bckGround)
     {
-        
+        bckGround.SetActive(false);
     }
 
-    void lowerOpacity(RawImage imageVar)
+    public void OnStartButtonClick()
     {
-        imageVar.color = new Color(imageVar.color.r, imageVar.color.g, imageVar.color.b, 1f);
+        hideBackground(background);
+        start.SetActive(false);
+        login.SetActive(true);
     }
+
 }
+
