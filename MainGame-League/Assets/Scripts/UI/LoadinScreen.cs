@@ -9,10 +9,12 @@ public class LoadinScreen : MonoBehaviour
     public GameObject background;
     public GameObject start;
     public GameObject login;
+    public GameObject register;
      
     void Start()
     {
         login.SetActive(false);
+        register.SetActive(false);
     }
 
     void hideBackground(GameObject bckGround)
@@ -25,6 +27,11 @@ public class LoadinScreen : MonoBehaviour
         hideBackground(background);
         start.SetActive(false);
         login.SetActive(true);
+    }
+    public void OnRegisterBtnClick()
+    {
+        login.SetActive(false);
+        register.SetActive(true);
     }
 
 }
