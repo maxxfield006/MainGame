@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 20853178}
   - component: {fileID: 20853177}
   m_Layer: 5
-  m_Name: loginBox
+  m_Name: registerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1443,7 +1443,7 @@ Transform:
   - {fileID: 1088461878}
   - {fileID: 71018483}
   - {fileID: 1334906864}
-  - {fileID: 1245012035}
+  - {fileID: 2047318451}
   m_Father: {fileID: 1756535292}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1954,37 +1954,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1245012034
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1245012035}
-  m_Layer: 0
-  m_Name: Register
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1245012035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245012034}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.612213, y: -16.246948, z: 624.4047}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2047318451}
-  m_Father: {fileID: 801996350}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1308490131
 GameObject:
@@ -4034,16 +4003,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047318450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 27.425598}
+  m_LocalPosition: {x: 0, y: 0, z: 651.8303}
   m_LocalScale: {x: 1.375, y: 1.675, z: 1}
   m_Children:
   - {fileID: 167578124}
-  m_Father: {fileID: 1245012035}
-  m_RootOrder: 0
+  m_Father: {fileID: 801996350}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.256073, y: -131}
+  m_AnchoredPosition: {x: 51.868256, y: -147.24695}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047318452
@@ -4149,7 +4118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cad5eeb117ea3429a6e76df43cba19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 438479524}
+  background: {fileID: 1590367204}
   start: {fileID: 2056054905}
   login: {fileID: 801996349}
   register: {fileID: 356429370}
