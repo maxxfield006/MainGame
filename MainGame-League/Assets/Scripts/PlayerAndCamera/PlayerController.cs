@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         if (champ.velocity.magnitude > 0)
         {
             animations.SetBool("IsMoving", true);
-            Debug.Log("is moving");
         }
         else
         {

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemyMinion
+  - blueTower
+  - redTower
   layers:
   - Default
   - TransparentFX
