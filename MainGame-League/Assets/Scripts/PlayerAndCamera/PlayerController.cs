@@ -37,16 +37,5 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-        while (endPos.x > 0) 
-        {
-            animations.SetBool("moving", true);
-        }
-        if (endPos.x == 0)
-        {
-            animations.SetBool("moving", false);
-        }
-
-        startPos = rb.transform.position;
     }
 }

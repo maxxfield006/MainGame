@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12093856, g: 0.2758711, b: 0.4885862, a: 1}
+  m_IndirectSpecularColor: {r: 0.12061628, g: 0.27586377, b: 0.48859012, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 943b9c4c78fc5574dad29c28b2a6e57e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 671f08f2ca388224aa9149efcc22534c, type: 2}
 --- !u!1 &6464077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4142215202734221512, guid: 7f9008489d07b494fb8ae58439666110,
@@ -363,7 +363,7 @@ Transform:
   - {fileID: 573917280}
   - {fileID: 1231283600}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &93046118 stripped
 GameObject:
@@ -1637,7 +1637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492441809
 GameObject:
@@ -4065,7 +4065,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &978561191
 PrefabInstance:
@@ -5173,7 +5173,7 @@ RectTransform:
   m_Children:
   - {fileID: 924100292}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7754,7 +7754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetX: 0
   offsetZ: -6.25
-  offsetY: 7
+  offsetY: 8.5
 --- !u!1 &1925509005
 GameObject:
   m_ObjectHideFlags: 0
@@ -8644,6 +8644,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8169081944982138166, guid: 365e81d4aab7fab4abb446dda84345de,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8562699424407806872, guid: 365e81d4aab7fab4abb446dda84345de,
         type: 3}
       propertyPath: m_RootOrder
@@ -8704,5 +8709,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: mrHan
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2323615453101688355, guid: 365e81d4aab7fab4abb446dda84345de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 365e81d4aab7fab4abb446dda84345de, type: 3}

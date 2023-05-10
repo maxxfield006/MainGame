@@ -63,7 +63,7 @@ public class Register : MonoBehaviour
 
         }
 
-        if (usernameInput.text.Count() >= 10 || usernameInput.text.Count() <= 2)
+        if (usernameInput.text.Count() > 10 || usernameInput.text.Count() <= 2)
         {
             errorMsg.SetText("Username " + usernameInput.text + " too long/short");
         }
