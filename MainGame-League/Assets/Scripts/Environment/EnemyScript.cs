@@ -42,10 +42,14 @@ public class EnemyScript : MonoBehaviour
 
         if (redMinion != null)
         {
+            float currentDistanceRM = Vector3.Distance(redMinion.transform.position, blueTower.transform.position);
 
-            Vector3 redDirection = blueTower.transform.position - redMinion.transform.position;
-            redDirection.Normalize();
-            blueMinion.transform.position += redDirection * minionMoveSpeed * Time.deltaTime;
+            if (currentDistanceRM > stopDistance)
+            {
+                Vector3 redDirection = blueTower.transform.position - redMinion.transform.position;
+                redDirection.Normalize();
+                blueMinion.transform.position += redDirection * minionMoveSpeed * Time.deltaTime;
+            }
 
         }
     }
