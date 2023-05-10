@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 337416623552915848}
   - component: {fileID: 218579539867114412}
   - component: {fileID: 385172279868892079}
-  - component: {fileID: 1243321565833002015}
+  - component: {fileID: 1581270128}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: blueMinion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1243321565833002015
+--- !u!135 &1581270128
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

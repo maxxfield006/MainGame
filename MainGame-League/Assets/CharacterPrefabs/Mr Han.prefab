@@ -1066,6 +1066,7 @@ GameObject:
   - component: {fileID: 5023853142950075825}
   - component: {fileID: 4506008029203072285}
   - component: {fileID: 46271073}
+  - component: {fileID: 6837960740802212285}
   m_Layer: 0
   m_Name: Mr Han
   m_TagString: Player
@@ -1195,6 +1196,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &6837960740802212285
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051672311347619015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.23773867
+  m_Height: 1.8399353
+  m_Direction: 1
+  m_Center: {x: 0.012497634, y: 0.91950274, z: -0.0041339397}
 --- !u!1 &3555771085616179485
 GameObject:
   m_ObjectHideFlags: 0

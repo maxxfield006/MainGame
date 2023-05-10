@@ -7,6 +7,8 @@ TagManager:
   - enemyMinion
   - blueTower
   - redTower
+  - blueMinion
+  - redMinion
   layers:
   - Default
   - TransparentFX
