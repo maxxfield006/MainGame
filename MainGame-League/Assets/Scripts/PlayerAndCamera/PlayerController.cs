@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Vector3 endPos = startPos - rb.transform.position;
-
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -35,6 +33,16 @@ public class PlayerController : MonoBehaviour
             {
                 champ.destination = hit.point;
             }
+        }
+
+        if (champ.velocity.magnitude > 0)
+        {
+            animations.SetBool("IsMoving", true);
+            Debug.Log("is moving");
+        }
+        else
+        {
+            animations.SetBool("IsMoving", false);
         }
 
     }
