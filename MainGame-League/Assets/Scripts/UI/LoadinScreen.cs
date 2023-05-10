@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-
 
 public class LoadinScreen : MonoBehaviour
 {
@@ -20,9 +18,9 @@ public class LoadinScreen : MonoBehaviour
 
     public void OnStartButtonClick()
     {
+        login.SetActive(true);
         background.SetActive(false);
         start.SetActive(false);
-        login.SetActive(true);
     }
     public void OnRegisterBtnClick()
     {
