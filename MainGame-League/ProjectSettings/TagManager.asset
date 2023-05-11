@@ -9,6 +9,7 @@ TagManager:
   - redTower
   - blueMinion
   - redMinion
+  - waypoint
   layers:
   - Default
   - TransparentFX
