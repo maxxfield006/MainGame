@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - enemyMinion
   - blueTower
   - redTower
-  - blueMinion
-  - redMinion
   - waypoint
+  - blueMinionTop
+  - redMinionTop
+  - blueWaypointop
   layers:
   - Default
   - TransparentFX

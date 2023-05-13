@@ -9,13 +9,18 @@ using TMPro;
 using System.Linq;
 using UnityEditorInternal;
 
+
 public class Register : MonoBehaviour
 {
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
     public Button registerButton;
+    public Button nameButton;
 
     public TMP_Text errorMsg;
+
+    private string[] nameColor = { "Red", "Orange", "Yellow", "Lime", "Green", "Blue", "Purple", "Black", "White", "Teal", "Grey", "Violet", "Amber", "Crimson", "Bronze", "Silver", "Gold", "Emerald", "Cherry", "Peach"};
+    private string[] nameAnimal = { "Cat", "Pig", "Owl", "Ape", "Cow", "Rat", "Ant", "Elk", "Bat", "Yak", "Gnu", "Eel", "Emu", "Ram", "Dzo", "Dog", "Bee", "Fox", "Hen", "Koi"};
 
 
     ArrayList credentials;
@@ -25,6 +30,7 @@ public class Register : MonoBehaviour
         errorMsg = GameObject.Find("ErrorMSG").GetComponent<TMP_Text>();
 
         registerButton.onClick.AddListener(writeStuffToFile);
+        nameButton.onClick.AddListener(generateRandomName);
 
         if (File.Exists(Application.dataPath + "/credentials.txt"))
         {
@@ -84,6 +90,24 @@ public class Register : MonoBehaviour
             File.WriteAllLines(Application.dataPath + "/credentials.txt", (String[])credentials.ToArray(typeof(string)));
             errorMsg.SetText("Account Registered");
         }
+    }
+
+    void generateRandomName()
+    {
+        int randomNum = UnityEngine.Random.Range(0, 21);
+        int randomNum1 = UnityEngine.Random.Range(0, 21);
+
+        string randomColor = nameColor[randomNum];
+        string randomAnimal = nameAnimal[randomNum1];
+        string finalName = randomColor + randomAnimal;
+
+        if (finalName.Length < 9)
+        {
+            int randomInt = UnityEngine.Random.Range(0, 99);
+            finalName = finalName + randomInt;
+        }
+
+        usernameInput.SetTextWithoutNotify(finalName);
     }
 
 
