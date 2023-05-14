@@ -104,7 +104,7 @@ public class Register : MonoBehaviour
         if (finalName.Length < 9)
         {
             int randomInt = UnityEngine.Random.Range(0, 99);
-            finalName = finalName + randomInt;
+            finalName += randomInt;
         }
 
         usernameInput.SetTextWithoutNotify(finalName);

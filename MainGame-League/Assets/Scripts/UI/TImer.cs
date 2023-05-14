@@ -22,7 +22,13 @@ public class TImer : MonoBehaviour
         currentTime += Time.deltaTime;
         minutes = (int)(currentTime / 60);
         seconds = (int)(currentTime % 60);
-
-        timer.SetText(minutes.ToString() +":"+ seconds.ToString());
+        if (seconds < 10)
+        {
+            timer.SetText(minutes.ToString() + ":" + "0" + seconds.ToString());
+        }
+        else
+        {
+            timer.SetText(minutes.ToString() + ":" + seconds.ToString());
+        }
     }
 }

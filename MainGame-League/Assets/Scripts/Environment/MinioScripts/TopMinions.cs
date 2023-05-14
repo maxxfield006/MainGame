@@ -18,6 +18,8 @@ public class TopMinions : MonoBehaviour
     private float minionSpeed = 1f;
     private bool atWayPoint = false;
 
+    public Animator animations;
+
     public SphereCollider detectionSphere;
     void Start()
     {
@@ -28,6 +30,8 @@ public class TopMinions : MonoBehaviour
         redWaypoint = GameObject.FindGameObjectWithTag("redWaypointop");
 
         detectionSphere = GetComponent<SphereCollider>();
+
+        animations = GetComponent<Animator>();
     }
 
     void Update()
@@ -61,11 +65,27 @@ public class TopMinions : MonoBehaviour
                         Vector3 targetPos = new Vector3(redTopTower1.transform.position.x, blueMinion.transform.position.y, redTopTower1.transform.position.z);
                         blueMinion.transform.position = Vector3.MoveTowards(blueMinion.transform.position, targetPos, minionSpeed * Time.deltaTime);
                     }
+                    else
+                    {
+                        blueMinion.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    }
 
                 }
 
+                if (blueMinion.GetComponent<Rigidbody>().velocity != Vector3.zero) 
+                {
+                    animations.SetBool("isMoving", true);
+                }
+                else
+                {
+                    animations.SetBool("isMoving", false);
+                }
+                
+
             }
         }
+
+        
         
     }
 }
