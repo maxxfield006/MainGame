@@ -47,7 +47,7 @@ public class Register : MonoBehaviour
     void writeStuffToFile()
     {
         int numCount = 0;
-        int numCharCount = 10;
+        int numCharCount = usernameInput.text.Length;
 
         foreach (char c in usernameInput.text)
         {
