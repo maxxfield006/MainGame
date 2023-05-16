@@ -55,7 +55,7 @@ public class Register : MonoBehaviour
             {
                 numCount++;
             }
-            else if (char.IsLetterOrDigit(c))
+            if (char.IsLetterOrDigit(c))
             {
                 numCharCount--;
             }
@@ -88,9 +88,9 @@ public class Register : MonoBehaviour
         {
             errorMsg.SetText("Username " + usernameInput.text + " already exists");
         }
-        else if (numCharCount > 1)
+        else if (numCharCount > 0)
         {
-            errorMsg.SetText("Username " + usernameInput.text + "  contains too many special characters (eg @#!$");
+            errorMsg.SetText("Username " + usernameInput.text + "  contains special characters (eg @#!$");
         }
         
         else
