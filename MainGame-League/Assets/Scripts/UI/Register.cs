@@ -47,12 +47,17 @@ public class Register : MonoBehaviour
     void writeStuffToFile()
     {
         int numCount = 0;
+        int numCharCount = usernameInput.text.Length;
 
         foreach (char c in usernameInput.text)
         {
             if (char.IsDigit(c))
             {
                 numCount++;
+            }
+            if (char.IsLetterOrDigit(c))
+            {
+                numCharCount--;
             }
         }
 
@@ -82,6 +87,10 @@ public class Register : MonoBehaviour
         else if (isExists)
         {
             errorMsg.SetText("Username " + usernameInput.text + " already exists");
+        }
+        else if (numCharCount > 0)
+        {
+            errorMsg.SetText("Username " + usernameInput.text + "  contains special characters (eg @#!$");
         }
         
         else
