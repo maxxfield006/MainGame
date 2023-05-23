@@ -49,6 +49,9 @@ public class Register : MonoBehaviour
         int numCount = 0;
         int numCharCount = usernameInput.text.Length;
 
+        int passwordLength = passwordInput.text.Length;
+        int usernameLength = usernameInput.text.Length;
+
         foreach (char c in usernameInput.text)
         {
             if (char.IsDigit(c))
@@ -74,9 +77,15 @@ public class Register : MonoBehaviour
 
         }
 
+
+
         if (usernameInput.text.Count() > 10 || usernameInput.text.Count() <= 2)
         {
             errorMsg.SetText("Username " + usernameInput.text + " too long/short");
+        }
+        else if (passwordLength < 1)
+        {
+            errorMsg.SetText("You must add a password");
         }
 
         else if (numCount >= 5)
