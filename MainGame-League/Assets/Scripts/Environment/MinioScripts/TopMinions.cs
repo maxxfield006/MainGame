@@ -10,10 +10,11 @@ public class TopMinions : MonoBehaviour
     private GameObject blueWaypoint;
     private GameObject redWaypoint;
 
-    public GameObject blueTopTower1;
-    public GameObject blueTopTower2;
-    public GameObject redTopTower1;
-    public GameObject redTopTower2;
+    public GameObject blueTower1;
+    public GameObject redTower1;
+
+    public GameObject blueTower2;
+    public GameObject redTower2;
 
     private float minionSpeed = 1f;
     private bool atWayPoint = false;
@@ -23,11 +24,11 @@ public class TopMinions : MonoBehaviour
     public SphereCollider detectionSphere;
     void Start()
     {
-        blueMinions = GameObject.FindGameObjectsWithTag("blueMinionTop");
-        redMinions = GameObject.FindGameObjectsWithTag("redMinionTop");
+        blueMinions = GameObject.FindGameObjectsWithTag("blueMinion");
+        redMinions = GameObject.FindGameObjectsWithTag("redMinion");
 
-        blueWaypoint = GameObject.FindGameObjectWithTag("blueWaypointop");
-        redWaypoint = GameObject.FindGameObjectWithTag("redWaypointop");
+        blueWaypoint = GameObject.FindGameObjectWithTag("blueWayPoint");
+        redWaypoint = GameObject.FindGameObjectWithTag("redWayPoint");
 
         detectionSphere = GetComponent<SphereCollider>();
 
@@ -58,11 +59,11 @@ public class TopMinions : MonoBehaviour
 
                 else
                 {
-                    float blueDisToRedTower = Vector3.Distance(blueMinion.transform.position, redTopTower1.transform.position);
+                    float blueDisToRedTower = Vector3.Distance(blueMinion.transform.position, redTower1.transform.position);
 
                     if (blueDisToRedTower > stopDistance)
                     {
-                        Vector3 targetPos = new Vector3(redTopTower1.transform.position.x, blueMinion.transform.position.y, redTopTower1.transform.position.z);
+                        Vector3 targetPos = new Vector3(redTower1.transform.position.x, blueMinion.transform.position.y, redTower1.transform.position.z);
                         blueMinion.transform.position = Vector3.MoveTowards(blueMinion.transform.position, targetPos, minionSpeed * Time.deltaTime);
                     }
                     else
