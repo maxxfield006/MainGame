@@ -12,30 +12,37 @@ using UnityEditorInternal;
 
 public class Register : MonoBehaviour
 {
+    //Variables for the input fields and buttons on the register tab 
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
     public Button registerButton;
     public Button nameButton;
 
+    //Variable for error message
     public TMP_Text errorMsg;
-
+    
+    //Two string arrays for the generated names 
     private string[] nameColor = { "Red", "Orange", "Yellow", "Lime", "Green", "Blue", "Purple", "Black", "White", "Teal", "Grey", "Violet", "Amber", "Crimson", "Bronze", "Silver", "Gold", "Emerald", "Cherry", "Peach"};
     private string[] nameAnimal = { "Cat", "Pig", "Owl", "Ape", "Cow", "Rat", "Ant", "Elk", "Bat", "Yak", "Gnu", "Eel", "Emu", "Ram", "Dzo", "Dog", "Bee", "Fox", "Hen", "Koi"};
 
-
+    //an arraylist for the credentials (used an arraylist over a list/ array as there is more functionality
     ArrayList credentials;
 
     void Start()
     {
+        //Finding the error message in hieracrchy
         errorMsg = GameObject.Find("ErrorMSG").GetComponent<TMP_Text>();
 
+        //Finding the register and random name button
         registerButton.onClick.AddListener(writeStuffToFile);
         nameButton.onClick.AddListener(generateRandomName);
 
+        //Checking if there is a file in specified pathing names credentials
         if (File.Exists(Application.dataPath + "/credentials.txt"))
         {
             credentials = new ArrayList(File.ReadAllLines(Application.dataPath + "/credentials.txt"));
         }
+        //If there isn't it creates one in the specefied path and names it credentials
         else
         {
             File.WriteAllText(Application.dataPath + "/credentials.txt", "");
