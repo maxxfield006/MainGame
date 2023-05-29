@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopMinions : MonoBehaviour
+public class Minions : MonoBehaviour
 {
     private GameObject[] blueMinions;
     private GameObject[] redMinions;
@@ -43,6 +43,8 @@ public class TopMinions : MonoBehaviour
         {
             if (blueMinions != null)
             {
+                Debug.Log("Works");
+
                 if (!atWayPoint)
                 {
                     float blueDisToWP = Vector3.Distance(blueMinion.transform.position, blueWaypoint.transform.position);
