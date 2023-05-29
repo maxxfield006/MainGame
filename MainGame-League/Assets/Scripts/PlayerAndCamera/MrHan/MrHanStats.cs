@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 public class MrHanStats : MonoBehaviour
 {
@@ -29,18 +32,26 @@ public class MrHanStats : MonoBehaviour
     public float magicResScale = 7;
 
 
-    public float moveSpeed = 340;
-    public float moveSpeedScale = 5;
+    private float moveSpeed = 2.0f;
+    public float moveSpeedScale = 0.2f;
+
+
+    private NavMeshAgent mrHan;
+    public Slider healthSlider;
 
 
     void Start()
     {
-        
+        mrHan = GetComponent<NavMeshAgent>();
+        mrHan.speed *= moveSpeed;
+
+        healthSlider.maxValue = health;
     }
 
-    
+
     void Update()
     {
-        
+        healthSlider.value = health;
+
     }
 }

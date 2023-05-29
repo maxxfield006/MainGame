@@ -21,7 +21,7 @@ public class Minions : MonoBehaviour
 
     public Animator animations;
 
-    public SphereCollider detectionSphere;
+    private SphereCollider detectionSphere;
     void Start()
     {
         blueMinions = GameObject.FindGameObjectsWithTag("blueMinion");
@@ -37,13 +37,12 @@ public class Minions : MonoBehaviour
 
     void Update()
     {
-        float stopDistance = detectionSphere.radius * 1.5f;
+        float stopDistance = 4f;
 
         foreach (GameObject blueMinion in blueMinions)
         {
             if (blueMinions != null)
             {
-                Debug.Log("Works");
 
                 if (!atWayPoint)
                 {

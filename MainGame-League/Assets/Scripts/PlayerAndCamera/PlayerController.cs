@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    NavMeshAgent champ;
-    public float speed;
+    private NavMeshAgent champ;
     public Animator animations;
     public Rigidbody rb;
 
@@ -17,7 +16,6 @@ public class PlayerController : MonoBehaviour
         champ = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         animations = GetComponent<Animator>();
-        champ.speed += speed;
 
         
     }
