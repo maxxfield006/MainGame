@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class MrHanStats : MonoBehaviour
 {
-    public float health = 560;
+    public float health = 1000;
     public float healthReg = 2;
     public float healthScale = 110;
     public float healthRegScale = 0.3f;
@@ -37,21 +38,26 @@ public class MrHanStats : MonoBehaviour
 
 
     private NavMeshAgent mrHan;
-    public Slider healthSlider;
 
+    public Image healthBar;
+    public float dmg = 40;
 
     void Start()
     {
-        mrHan = GetComponent<NavMeshAgent>();
+        mrHan = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
+        healthBar = GameObject.Find("health").GetComponent<Image>();
         mrHan.speed *= moveSpeed;
 
-        healthSlider.maxValue = health;
     }
 
 
     void Update()
     {
-        healthSlider.value = health;
-
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log(health);
+            health -= dmg;
+            healthBar.fillAmount = health / 1000;
+        }
     }
 }
