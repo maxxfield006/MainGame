@@ -224,7 +224,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021277371}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 7.55}
+  m_LocalPosition: {x: 0, y: 0, z: 7.97}
   m_LocalScale: {x: 5.36, y: 15.19, z: 1}
   m_Children: []
   m_Father: {fileID: 628287360}
@@ -298,7 +298,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063688694}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 2.64}
+  m_LocalPosition: {x: 0, y: 0, z: 2.97}
   m_LocalScale: {x: 2.37, y: 5.04, z: 1}
   m_Children: []
   m_Father: {fileID: 57252835}
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 6837960740802212285}
   - component: {fileID: 1671205612}
   m_Layer: 0
-  m_Name: Mr Han
+  m_Name: MrHan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64efd35e17e1fe9408bbab2fac9f5810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations: {fileID: 46271073}
+  mrHanAnimations: {fileID: 46271073}
   rb: {fileID: 5023853142950075825}
 --- !u!195 &7698402375814920337
 NavMeshAgent:
@@ -1495,7 +1495,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 450

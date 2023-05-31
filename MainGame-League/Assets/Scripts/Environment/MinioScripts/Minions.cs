@@ -19,7 +19,7 @@ public class Minions : MonoBehaviour
     private float minionSpeed = 1f;
     private bool atWayPoint = false;
 
-    public Animator animations;
+    //public Animator animations;
 
     private SphereCollider detectionSphere;
     void Start()
@@ -32,7 +32,7 @@ public class Minions : MonoBehaviour
 
         detectionSphere = GetComponent<SphereCollider>();
 
-        animations = GetComponent<Animator>();
+        //animations = GetComponent<Animator>();
     }
 
     void Update()
@@ -74,14 +74,7 @@ public class Minions : MonoBehaviour
 
                 }
 
-                if (blueMinion.GetComponent<Rigidbody>().velocity != Vector3.zero) 
-                {
-                    animations.SetBool("isMoving", true);
-                }
-                else
-                {
-                    animations.SetBool("isMoving", false);
-                }
+                
                 
 
             }

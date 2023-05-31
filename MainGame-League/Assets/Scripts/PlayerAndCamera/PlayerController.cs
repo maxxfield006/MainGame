@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     private NavMeshAgent champ;
-    public Animator animations;
+    public Animator mrHanAnimations;
     public Rigidbody rb;
 
     Vector3 startPos;
@@ -15,14 +15,12 @@ public class PlayerController : MonoBehaviour
     {
         champ = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        animations = GetComponent<Animator>();
-
-        
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
+
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -35,11 +33,11 @@ public class PlayerController : MonoBehaviour
 
         if (champ.velocity.magnitude > 0)
         {
-            animations.SetBool("IsMoving", true);
+            mrHanAnimations.SetBool("IsMoving", true);
         }
         else
         {
-            animations.SetBool("IsMoving", false);
+            mrHanAnimations.SetBool("IsMoving", false);
         }
 
     }

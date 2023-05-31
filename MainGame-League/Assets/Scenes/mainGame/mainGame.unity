@@ -946,6 +946,9 @@ MonoBehaviour:
   armorScale: 6
   magicResScale: 7
   moveSpeedScale: 0.2
+  mrHan: {fileID: 3051672311347619015, guid: 6ed85ef24f404844eb33429dad5531fa, type: 3}
+  mrHanNav: {fileID: 7698402375814920337, guid: 6ed85ef24f404844eb33429dad5531fa,
+    type: 3}
   healthBar: {fileID: 1235155683}
   dmg: 40
 --- !u!1 &259609964
@@ -5078,7 +5081,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1075677738}
   - component: {fileID: 1075677741}
-  - component: {fileID: 1075677740}
   - component: {fileID: 1075677739}
   m_Layer: 0
   m_Name: waypointMid
@@ -5114,45 +5116,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1075677740
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075677737}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &1075677741
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8710,7 +8673,6 @@ MonoBehaviour:
   redTower1: {fileID: 140960555}
   blueTower2: {fileID: 1553318331}
   redTower2: {fileID: 700115581}
-  animations: {fileID: 1082732129}
 --- !u!1001 &1770625300
 PrefabInstance:
   m_ObjectHideFlags: 0

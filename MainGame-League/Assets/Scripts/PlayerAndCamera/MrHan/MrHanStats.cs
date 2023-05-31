@@ -32,27 +32,28 @@ public class MrHanStats : MonoBehaviour
     public float armorScale = 6;
     public float magicResScale = 7;
 
-
-    private float moveSpeed = 2.0f;
+    private float moveSpeed = 2f;
     public float moveSpeedScale = 0.2f;
 
-
-    private NavMeshAgent mrHan;
+    public GameObject mrHan;
+    public NavMeshAgent mrHanNav;
 
     public Image healthBar;
     public float dmg = 40;
 
     void Start()
     {
-        mrHan = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
         healthBar = GameObject.Find("health").GetComponent<Image>();
-        mrHan.speed *= moveSpeed;
+
+        mrHanNav.speed = 0;
+        mrHanNav.speed += moveSpeed;
+
 
     }
 
 
     void Update()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log(health);

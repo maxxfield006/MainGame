@@ -119,9 +119,11 @@ public class MHAbilities : MonoBehaviour
 
         //canvas inputs
         Quaternion transRot1 = Quaternion.LookRotation(position1 - player1.transform.position);
+        transRot1.eulerAngles = new Vector3(0, transRot1.eulerAngles.y, transRot1.eulerAngles.z);
         ability1Canvas.transform.rotation = Quaternion.Lerp(transRot1, ability1Canvas.transform.rotation, 0f);
 
         Quaternion transRot2 = Quaternion.LookRotation(position2 - player2.transform.position);
+        transRot2.eulerAngles = new Vector3(0, transRot2.eulerAngles.y, transRot2.eulerAngles.z);
         ability2Canvas.transform.rotation = Quaternion.Lerp(transRot2, ability2Canvas.transform.rotation, 0f);
     }
 
