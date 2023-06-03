@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        instantiateMrHan();
+    }
+
+    void instantiateMrHan()
+    {
         Instantiate(character, new Vector3(0, 0, 0), character.transform.rotation);
     }
 

@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     private NavMeshAgent champ;
-    public Animator mrHanAnimations;
     public Rigidbody rb;
 
     Vector3 startPos;
@@ -29,15 +28,6 @@ public class PlayerController : MonoBehaviour
             {
                 champ.destination = hit.point;
             }
-        }
-
-        if (champ.velocity.magnitude > 0)
-        {
-            mrHanAnimations.SetBool("IsMoving", true);
-        }
-        else
-        {
-            mrHanAnimations.SetBool("IsMoving", false);
         }
 
     }
