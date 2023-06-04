@@ -39,11 +39,13 @@ public class MrHanStats : MonoBehaviour
     public NavMeshAgent mrHanNav;
 
     public Image healthBar;
+    private Image healthBar2D;
     public float dmg = 40;
 
     void Start()
     {
         healthBar = GameObject.Find("health").GetComponent<Image>();
+        healthBar2D = GameObject.Find("health2D").GetComponent<Image>();
 
         mrHanNav.speed = 0;
         mrHanNav.speed += moveSpeed;
@@ -53,12 +55,13 @@ public class MrHanStats : MonoBehaviour
 
 
     void Update()
-    { 
-        if (Input.GetKeyDown(KeyCode.F))
+    {
+        if (Input.GetKeyDown(KeyCode.F) && health > 0)
         {
             Debug.Log(health);
             health -= dmg;
             healthBar.fillAmount = health / 1000;
+            healthBar2D.fillAmount = health / 1000;
         }
     }
 }

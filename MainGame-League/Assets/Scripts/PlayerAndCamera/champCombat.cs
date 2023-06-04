@@ -18,8 +18,7 @@ public class champCombat : MonoBehaviour
     public bool performMeleeAttack = true;
     void Start()
     {
-        moveScript = GetComponent<PlayerController>();
-        targetedEnemy = GameObject.FindGameObjectWithTag("redMinion");
+        moveScript = GetComponent<PlayerController>(); 
     }
 
     // Update is called once per frame

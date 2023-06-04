@@ -10,6 +10,7 @@ public class InputTargeting : MonoBehaviour
     void Start()
     {
         selectedChamp = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
