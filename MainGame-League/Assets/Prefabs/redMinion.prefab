@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 9060638579006608187}
   - component: {fileID: 8798881963839578399}
   - component: {fileID: 8956265805337909532}
-  - component: {fileID: 4227216433256787242}
   - component: {fileID: 8994611324532022050}
+  - component: {fileID: 1169284728}
+  - component: {fileID: 1169284732}
   m_Layer: 0
-  m_Name: enemyred
+  m_Name: redMinion
   m_TagString: redMinion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +82,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &4227216433256787242
+--- !u!135 &8994611324532022050
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166869981101144090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1169284728
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,16 +111,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8994611324532022050
-SphereCollider:
+--- !u!114 &1169284732
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8166869981101144090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d714fb1e1c0310f43b15a94833e36e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0

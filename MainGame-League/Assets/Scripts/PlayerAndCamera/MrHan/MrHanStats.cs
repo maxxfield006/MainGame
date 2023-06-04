@@ -32,7 +32,7 @@ public class MrHanStats : MonoBehaviour
     public float armorScale = 6;
     public float magicResScale = 7;
 
-    private float moveSpeed = 2f;
+    private float moveSpeed = 1.9f;
     public float moveSpeedScale = 0.2f;
 
     public GameObject mrHan;

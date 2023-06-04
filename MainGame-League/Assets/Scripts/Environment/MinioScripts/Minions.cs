@@ -17,7 +17,8 @@ public class Minions : MonoBehaviour
     public GameObject redTower2;
 
     private float minionSpeed = 1f;
-    private bool atWayPoint = false;
+    private bool atWayPointBlue = false;
+    private bool atWayPointRed = false;
 
     //public Animator animations;
 
@@ -37,14 +38,22 @@ public class Minions : MonoBehaviour
 
     void Update()
     {
-        float stopDistance = 4f;
+        blueMinionGo();
+        redMinionGo();
+
+
+    }
+
+    void blueMinionGo()
+    {
+        float blueStopDistance = 4f;
 
         foreach (GameObject blueMinion in blueMinions)
         {
             if (blueMinions != null)
             {
 
-                if (!atWayPoint)
+                if (!atWayPointBlue)
                 {
                     float blueDisToWP = Vector3.Distance(blueMinion.transform.position, blueWaypoint.transform.position);
 
@@ -54,7 +63,7 @@ public class Minions : MonoBehaviour
                     }
                     else
                     {
-                        atWayPoint = true;
+                        atWayPointBlue = true;
                     }
                 }
 
@@ -62,7 +71,7 @@ public class Minions : MonoBehaviour
                 {
                     float blueDisToRedTower = Vector3.Distance(blueMinion.transform.position, redTower1.transform.position);
 
-                    if (blueDisToRedTower > stopDistance)
+                    if (blueDisToRedTower > blueStopDistance)
                     {
                         Vector3 targetPos = new Vector3(redTower1.transform.position.x, blueMinion.transform.position.y, redTower1.transform.position.z);
                         blueMinion.transform.position = Vector3.MoveTowards(blueMinion.transform.position, targetPos, minionSpeed * Time.deltaTime);
@@ -74,13 +83,57 @@ public class Minions : MonoBehaviour
 
                 }
 
-                
-                
+
+
 
             }
         }
+    }
 
-        
-        
+
+    void redMinionGo()
+    {
+        float redStopDistance = 4f;
+
+        foreach (GameObject redMinion in redMinions)
+        {
+            if (redMinions != null)
+            {
+
+                if (!atWayPointRed)
+                {
+                    float redDisToWP = Vector3.Distance(redMinion.transform.position, redWaypoint.transform.position);
+
+                    if (redDisToWP > 1f)
+                    {
+                        redMinion.transform.position = Vector3.MoveTowards(redMinion.transform.position, redWaypoint.transform.position, minionSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        atWayPointRed = true;
+                    }
+                }
+
+                else
+                {
+                    float redDisToRedTower = Vector3.Distance(redMinion.transform.position, blueTower1.transform.position);
+
+                    if (redDisToRedTower > redStopDistance)
+                    {
+                        Vector3 targetPos = new Vector3(blueTower1.transform.position.x, redMinion.transform.position.y, blueTower1.transform.position.z);
+                        redMinion.transform.position = Vector3.MoveTowards(redMinion.transform.position, targetPos, minionSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        redMinion.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    }
+
+                }
+
+
+
+
+            }
+        }
     }
 }
