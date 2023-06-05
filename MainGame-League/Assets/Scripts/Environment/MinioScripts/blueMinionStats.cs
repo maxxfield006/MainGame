@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class blueMinionStats : MonoBehaviour
 {
-    public float maxHealth = 120;
+    public float maxHealth;
     public float atkDamage;
     public float atkSpeed;
     public float atkTime;

@@ -882,7 +882,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 246950626}
-  - component: {fileID: 246950628}
   m_Layer: 5
   m_Name: mrHan
   m_TagString: Untagged
@@ -915,37 +914,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.5032983, y: 15.020531}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &246950628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246950625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c2691370d9989642b23fa23f873f852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1000
-  healthReg: 2
-  healthScale: 110
-  healthRegScale: 0.3
-  attackDmg: 60
-  attackDmgScale: 12
-  attackSpeed: 0.65
-  attackTime: 1.4
-  attackSpeedScale: 0.05
-  critChance: 0
-  armor: 28
-  magicRes: 32
-  armorScale: 6
-  magicResScale: 7
-  moveSpeedScale: 0.2
-  mrHan: {fileID: 3051672311347619015, guid: 6ed85ef24f404844eb33429dad5531fa, type: 3}
-  mrHanNav: {fileID: 7698402375814920337, guid: 6ed85ef24f404844eb33429dad5531fa,
-    type: 3}
-  healthBar: {fileID: 0}
 --- !u!1 &259609964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,6 +5110,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 675436668, guid: 3c8bbdd757919894fabecfb35870133e, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534980729649770481, guid: 3c8bbdd757919894fabecfb35870133e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534980729649770481, guid: 3c8bbdd757919894fabecfb35870133e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266426907562227170, guid: 3c8bbdd757919894fabecfb35870133e,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2266426907562227170, guid: 3c8bbdd757919894fabecfb35870133e,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8166869981101144090, guid: 3c8bbdd757919894fabecfb35870133e,
         type: 3}
       propertyPath: m_Name
@@ -7130,18 +7122,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1467877025 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1650527865, guid: 8f5856b5c3e769541ad5510f5c725307,
-    type: 3}
-  m_PrefabInstance: {fileID: 8371500240303033143}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1483595913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10903,22 +10883,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 488969431, guid: 8f5856b5c3e769541ad5510f5c725307, type: 3}
-      propertyPath: m_Name
-      value: blueMinionHealthCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082732128, guid: 8f5856b5c3e769541ad5510f5c725307, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082732128, guid: 8f5856b5c3e769541ad5510f5c725307, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294892991, guid: 8f5856b5c3e769541ad5510f5c725307, type: 3}
-      propertyPath: blueMinionHealth
-      value: 
-      objectReference: {fileID: 1467877025}
     - target: {fileID: 3550026513786762439, guid: 8f5856b5c3e769541ad5510f5c725307,
         type: 3}
       propertyPath: m_RootOrder
@@ -10974,10 +10938,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3872015148696254487, guid: 8f5856b5c3e769541ad5510f5c725307,
+    - target: {fileID: 5473327288062643755, guid: 8f5856b5c3e769541ad5510f5c725307,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: maxHealth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8174369895012133738, guid: 8f5856b5c3e769541ad5510f5c725307,
         type: 3}

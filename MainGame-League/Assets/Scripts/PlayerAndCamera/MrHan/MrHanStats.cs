@@ -13,7 +13,7 @@ public class MrHanStats : MonoBehaviour
     public float healthScale = 110;
     public float healthRegScale = 0.3f;
 
-    public float attackDmg = 60;
+    public float attackDmg = 60f;
     public float attackDmgScale = 12;
 
     public float attackSpeed = 1f;
@@ -30,13 +30,12 @@ public class MrHanStats : MonoBehaviour
     private float moveSpeed = 1.9f;
     public float moveSpeedScale = 0.2f;
 
-    public GameObject mrHan;
-    public NavMeshAgent mrHanNav;
-
     public Image healthBar;
-    private Image healthBar2D;
+    public Image healthBar2D;
 
     champCombat champCombatScript;
+    PlayerController champNav;
+
     blueMinionStats blueMinionStatsScript;
     redMinionStats redMinionStatsScript;
 
@@ -45,8 +44,10 @@ public class MrHanStats : MonoBehaviour
         healthBar = GameObject.Find("health").GetComponent<Image>();
         healthBar2D = GameObject.Find("health2D").GetComponent<Image>();
 
-        mrHanNav.speed = 0;
-        mrHanNav.speed += moveSpeed;
+        redMinionStatsScript = GameObject.FindWithTag("redMinion").GetComponent<redMinionStats>();
+
+        champNav.champ.speed = 0;
+        champNav.champ.speed += moveSpeed;
 
         champCombatScript = GetComponent<champCombat>();
     }

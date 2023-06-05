@@ -49,7 +49,7 @@ public class Minions : MonoBehaviour
 
         foreach (GameObject blueMinion in blueMinions)
         {
-            if (blueMinions != null)
+            if (blueMinion != null)
             {
 
                 if (!atWayPointBlue)
@@ -96,7 +96,7 @@ public class Minions : MonoBehaviour
 
         foreach (GameObject redMinion in redMinions)
         {
-            if (redMinions != null)
+            if (redMinion != null)
             {
 
                 if (!atWayPointRed)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 488969434}
   - component: {fileID: 488969433}
   m_Layer: 0
-  m_Name: blueMinionHealth
+  m_Name: blueMinionHealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1082732128}
   - component: {fileID: 1082732129}
   - component: {fileID: 1082732130}
-  - component: {fileID: 1294892991}
+  - component: {fileID: 5473327288062643755}
   m_Layer: 0
   m_Name: blueMinion
   m_TagString: blueMinion
@@ -341,7 +341,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8174369895012133738}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -360,7 +360,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &1082732129
 Animator:
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
---- !u!114 &1294892991
+--- !u!114 &5473327288062643755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -403,13 +403,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8174369895012133738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917b675c3a3585a49b56aab94a60ffca, type: 3}
+  m_Script: {fileID: 11500000, guid: 579ea0721d630d944957fea31b1d94d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 120
-  health: 0
-  atkDamage: 6
-  atkSpeed: 1
-  atkTime: 1.4
-  blueMinionHealth: {fileID: 0}
-  redMinionHealth: {fileID: 0}
+  maxHealth: 300
+  atkDamage: 0
+  atkSpeed: 0
+  atkTime: 0
+  blueMinionHealth: {fileID: 1650527865}

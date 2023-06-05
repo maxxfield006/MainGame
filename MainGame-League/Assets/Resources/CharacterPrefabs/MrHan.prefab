@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: 7890544062906665526}
   - component: {fileID: 986508089409054528}
   - component: {fileID: 1782437448}
+  - component: {fileID: 4901342374145310167}
   m_Layer: 0
   m_Name: MrHan
   m_TagString: Player
@@ -1600,6 +1601,36 @@ MonoBehaviour:
   basicAtkIdle: 0
   isChampAlive: 0
   performMeleeAttack: 1
+--- !u!114 &4901342374145310167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051672311347619015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2691370d9989642b23fa23f873f852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 800
+  healthReg: 2
+  healthScale: 110
+  healthRegScale: 0.3
+  attackDmg: 60
+  attackDmgScale: 12
+  attackSpeed: 1
+  attackTime: 2
+  attackSpeedScale: 0.05
+  critChance: 0
+  armor: 28
+  magicRes: 32
+  armorScale: 6
+  magicResScale: 7
+  moveSpeedScale: 0.2
+  mrHan: {fileID: 0}
+  mrHanNav: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &3555771085616179485
 GameObject:
   m_ObjectHideFlags: 0
