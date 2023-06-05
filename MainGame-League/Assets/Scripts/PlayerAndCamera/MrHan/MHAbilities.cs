@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Lumin;
+using UnityEngine.AI;
 
 public class MHAbilities : MonoBehaviour
 {
@@ -46,6 +47,10 @@ public class MHAbilities : MonoBehaviour
     public KeyCode ability2;
     private IEnumerator ability2CoolDown;
 
+    bool isDashing = false;
+    Vector3 originalSpeed;
+    Vector3 dashDirection;
+
 
 
     [Header("Ability3")]
@@ -73,6 +78,8 @@ public class MHAbilities : MonoBehaviour
 
     private MrHanStats mrHan;
 
+    private NavMeshAgent mrHanNav;
+
     void Start()
     {
         cd1 = GameObject.Find("cd1").GetComponent<TMP_Text>();
@@ -91,6 +98,8 @@ public class MHAbilities : MonoBehaviour
 
         skillShot1.gameObject.SetActive(false);
         skillShot2.gameObject.SetActive(false);
+
+        mrHanNav = GetComponent<NavMeshAgent>();
 
     }
 
@@ -174,6 +183,7 @@ public class MHAbilities : MonoBehaviour
     {
         if (Input.GetKey(ability2) && !isCoolDown2)
         {
+            dashAbility2();
             isCoolDown2 = true;
             abilityImage2.color = cdColor;
             ability2CoolDown = ability2CD();
@@ -183,6 +193,23 @@ public class MHAbilities : MonoBehaviour
         }
 
 
+    }
+
+    void dashAbility2()
+    {
+        isDashing = true;
+        originalSpeed = mrHanNav.velocity;
+        dashDirection = transform.forward;
+
+        if (isDashing)
+        {
+            mrHanNav.Move(dashDirection * 200 * Time.fixedDeltaTime);
+            isDashing = false;
+        }
+        else
+        {
+            mrHanNav.speed = originalSpeed.magnitude;
+        }
     }
 
     IEnumerator ability2CD()
