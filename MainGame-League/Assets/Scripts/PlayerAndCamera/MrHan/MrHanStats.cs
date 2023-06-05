@@ -8,21 +8,16 @@ using UnityEngine.UI;
 
 public class MrHanStats : MonoBehaviour
 {
-    public float health = 1000;
+    public float health = 800;
     public float healthReg = 2;
     public float healthScale = 110;
     public float healthRegScale = 0.3f;
 
-    public float mana = 320;
-    public float manaReg = 2;
-    public float manaScale = 60;
-    public float manaRegScale = 1;
-
     public float attackDmg = 60;
-    public float attackPower = 0;
     public float attackDmgScale = 12;
 
-    public float attackSpeed = 0.65f;
+    public float attackSpeed = 1f;
+    public float attackTime = 2f;
     public float attackSpeedScale = 0.05f;
 
     public float critChance = 0;
@@ -40,7 +35,10 @@ public class MrHanStats : MonoBehaviour
 
     public Image healthBar;
     private Image healthBar2D;
-    public float dmg = 40;
+
+    champCombat champCombatScript;
+    blueMinionStats blueMinionStatsScript;
+    redMinionStats redMinionStatsScript;
 
     void Start()
     {
@@ -50,18 +48,37 @@ public class MrHanStats : MonoBehaviour
         mrHanNav.speed = 0;
         mrHanNav.speed += moveSpeed;
 
-
+        champCombatScript = GetComponent<champCombat>();
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && health > 0)
+        blueMinionDestroy();
+        redMinionDestroy();
+
+        healthBar.fillAmount = health / 1000;
+        healthBar2D.fillAmount = health / 1000;
+
+    }
+
+    void redMinionDestroy()
+    {
+        if (redMinionStatsScript.maxHealth <= 0)
         {
-            Debug.Log(health);
-            health -= dmg;
-            healthBar.fillAmount = health / 1000;
-            healthBar2D.fillAmount = health / 1000;
+            Destroy(redMinionStatsScript.gameObject);
+            champCombatScript.targetedEnemy = null;
+            champCombatScript.performMeleeAttack = false;
+        }
+    }
+
+    void blueMinionDestroy()
+    {
+        if (blueMinionStatsScript.maxHealth <= 0)
+        {
+            Destroy(blueMinionStatsScript.gameObject);
+            champCombatScript.targetedEnemy = null;
+            champCombatScript.performMeleeAttack = false;
         }
     }
 }

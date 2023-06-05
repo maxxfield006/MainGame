@@ -20,7 +20,6 @@ public class Minions : MonoBehaviour
     private bool atWayPointBlue = false;
     private bool atWayPointRed = false;
 
-    //public Animator animations;
 
     private SphereCollider detectionSphere;
     void Start()
@@ -33,7 +32,7 @@ public class Minions : MonoBehaviour
 
         detectionSphere = GetComponent<SphereCollider>();
 
-        //animations = GetComponent<Animator>();
+
     }
 
     void Update()

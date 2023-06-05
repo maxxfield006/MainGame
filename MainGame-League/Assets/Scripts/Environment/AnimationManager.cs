@@ -25,7 +25,6 @@ public class AnimationManager : MonoBehaviour
     {
         if (champNav.velocity.magnitude > 0 )
         {
-            Debug.Log("should be working");
             mrHanAnimations.SetBool("isMoving", true);
         }
         else

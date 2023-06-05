@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public NavMeshAgent champ;
     public Rigidbody rb;
 
+    public float rotateSpeed;
+    public float rotateMoveSpeed = 0.1f;
+
     private champCombat champCombatScript;
 
     void Start()
