@@ -11,6 +11,8 @@ TagManager:
   - blueMinion
   - redMinion
   - floor
+  - FxTemporaire
+  - ability3P
   layers:
   - Default
   - TransparentFX

@@ -59,6 +59,10 @@ public class MHAbilities : MonoBehaviour
     bool isCoolDown3 = false;
     public KeyCode ability3;
     private IEnumerator ability3CoolDown;
+    private IEnumerator dmgCD;
+    float newDamage;
+    bool dmgOnCD = false;
+    float initialDmg;
 
 
 
@@ -80,6 +84,9 @@ public class MHAbilities : MonoBehaviour
 
     private NavMeshAgent mrHanNav;
 
+    private ParticleSystem ability3Particles;
+
+
     void Start()
     {
         cd1 = GameObject.Find("cd1").GetComponent<TMP_Text>();
@@ -100,6 +107,11 @@ public class MHAbilities : MonoBehaviour
         skillShot2.gameObject.SetActive(false);
 
         mrHanNav = GetComponent<NavMeshAgent>();
+        ability3Particles = GameObject.FindWithTag("ability3P").GetComponent<ParticleSystem>();
+
+        mrHan = GetComponent<MrHanStats>();
+
+        initialDmg = mrHan.attackDmg;
 
     }
 
@@ -134,6 +146,12 @@ public class MHAbilities : MonoBehaviour
         Quaternion transRot2 = Quaternion.LookRotation(position2 - player2.transform.position);
         transRot2.eulerAngles = new Vector3(0, transRot2.eulerAngles.y, transRot2.eulerAngles.z);
         ability2Canvas.transform.rotation = Quaternion.Lerp(transRot2, ability2Canvas.transform.rotation, 0f);
+    }
+
+
+    IEnumerator waitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
 
@@ -202,7 +220,7 @@ public class MHAbilities : MonoBehaviour
         dashDirection = transform.forward;
 
         if (isDashing)
-        {
+        { 
             mrHanNav.Move(dashDirection * 200 * Time.fixedDeltaTime);
             isDashing = false;
         }
@@ -218,6 +236,8 @@ public class MHAbilities : MonoBehaviour
         isCoolDown2 = false;
         abilityImage2.color = Color.white;
     }
+
+    
 
     IEnumerator abilityCoolDownTimer2()
     {
@@ -236,15 +256,38 @@ public class MHAbilities : MonoBehaviour
     {
         if (Input.GetKey(ability3) && !isCoolDown3)
         {
-            isCoolDown3 = true;
-            abilityImage3.color = cdColor;
-            ability3CoolDown = ability3CD();
-            abilityTimer3 = abilityCoolDownTimer3();
-            StartCoroutine(abilityTimer3);
-            StartCoroutine(ability3CoolDown);
+            addDamage();
+            dmgCD = dmgCoolDown();
+            StartCoroutine(dmgCD);
+
+
         }
 
 
+    }
+
+    void addDamage()
+    {
+        ability3Particles.Play();
+        newDamage = mrHan.attackDmg * 0.8f + mrHan.attackDmg;
+        mrHan.attackDmg = newDamage;
+        abilityImage3.color = cdColor;
+
+    }
+
+    IEnumerator dmgCoolDown()
+    {
+        yield return new WaitForSeconds(3);
+
+        ability3Particles.Stop();
+        mrHan.attackDmg = initialDmg;
+
+        isCoolDown3 = true;
+        abilityImage3.color = cdColor;
+        ability3CoolDown = ability3CD();
+        abilityTimer3 = abilityCoolDownTimer3();
+        StartCoroutine(abilityTimer3);
+        StartCoroutine(ability3CoolDown);
     }
 
     IEnumerator ability3CD()
