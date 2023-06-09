@@ -17,7 +17,7 @@ public class MrHanStats : MonoBehaviour
     public float attackDmgScale = 12;
 
     public float attackSpeed = 1f;
-    public float attackTime = 2f;
+    public float attackTime = 2.5f;
     public float attackSpeedScale = 0.05f;
 
     public float critChance = 0;
@@ -27,14 +27,14 @@ public class MrHanStats : MonoBehaviour
     public float armorScale = 6;
     public float magicResScale = 7;
 
-    private float moveSpeed = 1.9f;
+    public float moveSpeed = 1.9f;
     public float moveSpeedScale = 0.2f;
 
     public Image healthBar;
     public Image healthBar2D;
 
     champCombat champCombatScript;
-    PlayerController champNav;
+    public NavMeshAgent champNav;
 
     blueMinionStats blueMinionStatsScript;
     redMinionStats redMinionStatsScript;
@@ -45,9 +45,6 @@ public class MrHanStats : MonoBehaviour
         healthBar2D = GameObject.Find("health2D").GetComponent<Image>();
 
         redMinionStatsScript = GameObject.FindWithTag("redMinion").GetComponent<redMinionStats>();
-
-        champNav.champ.speed = 0;
-        champNav.champ.speed += moveSpeed;
 
         champCombatScript = GetComponent<champCombat>();
     }

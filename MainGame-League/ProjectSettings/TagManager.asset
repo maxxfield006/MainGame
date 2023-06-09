@@ -13,6 +13,7 @@ TagManager:
   - floor
   - FxTemporaire
   - ability3P
+  - MrHanAbility1
   layers:
   - Default
   - TransparentFX

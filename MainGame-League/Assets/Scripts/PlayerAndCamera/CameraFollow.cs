@@ -13,12 +13,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindWithTag("Player");
         //makes the camera only follow the x and z, so when moving it doesnt rotate the camera or change the height
         transform.position = new Vector3(player.transform.position.x + offsetX, player.transform.position.y + offsetY, player.transform.position.z + offsetZ);
     }

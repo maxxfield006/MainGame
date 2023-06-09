@@ -33,6 +33,8 @@ public class MHAbilities : MonoBehaviour
     public KeyCode ability1;
     private IEnumerator ability1CoolDown;
 
+    public GameObject ability1Prefab;
+
     //Ability 1
     Vector3 position1;
     public Canvas ability1Canvas;
@@ -60,9 +62,12 @@ public class MHAbilities : MonoBehaviour
     public KeyCode ability3;
     private IEnumerator ability3CoolDown;
     private IEnumerator dmgCD;
+    IEnumerator waitForDamage;
     float newDamage;
     bool dmgOnCD = false;
-    float initialDmg;
+    public float initialDmg;
+    bool inProgress = true;
+    IEnumerator checkForProgress;
 
 
 
@@ -72,6 +77,7 @@ public class MHAbilities : MonoBehaviour
     bool isCoolDown4 = false;
     public KeyCode ability4;
     private IEnumerator ability4CoolDown;
+    public GameObject ability4Prefab;
 
     //Ability 4
     Vector3 position2;
@@ -111,11 +117,11 @@ public class MHAbilities : MonoBehaviour
 
         mrHan = GetComponent<MrHanStats>();
 
-        initialDmg = mrHan.attackDmg;
+
+
 
     }
 
-   
     void FixedUpdate()
     {
         Ability1();
@@ -128,7 +134,7 @@ public class MHAbilities : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray,out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             position1 = new Vector3(hit.point.x, hit.point.y, hit.point.z);
         }
@@ -164,6 +170,7 @@ public class MHAbilities : MonoBehaviour
         }
         if (skillShot1.gameObject.activeSelf && Input.GetMouseButton(0))
         {
+            shootAbility();
             isCoolDown1 = true;
             abilityImage1.color = cdColor;
             ability1CoolDown = ability1CD();
@@ -172,7 +179,25 @@ public class MHAbilities : MonoBehaviour
             StartCoroutine(ability1CoolDown);
         }
 
-      
+
+    }
+
+    void shootAbility()
+    {
+        if (ability1Prefab != null)
+        {
+            GameObject instantiatedAbility1 = Instantiate(ability1Prefab, ability1Canvas.transform.position, ability1Canvas.transform.rotation);
+            Rigidbody abilityRB = instantiatedAbility1.GetComponent<Rigidbody>();
+            abilityRB.AddForce(instantiatedAbility1.transform.forward * 10, ForceMode.Impulse);
+            StartCoroutine(BreakAfterDistance(instantiatedAbility1, 0.65f));
+        }
+        
+    }
+
+    IEnumerator BreakAfterDistance(GameObject abilityPrefab, float timeToBreak)
+    {
+        yield return new WaitForSeconds(timeToBreak);
+        Destroy(abilityPrefab);
     }
 
     IEnumerator ability1CD()
@@ -220,7 +245,7 @@ public class MHAbilities : MonoBehaviour
         dashDirection = transform.forward;
 
         if (isDashing)
-        { 
+        {
             mrHanNav.Move(dashDirection * 200 * Time.fixedDeltaTime);
             isDashing = false;
         }
@@ -237,7 +262,7 @@ public class MHAbilities : MonoBehaviour
         abilityImage2.color = Color.white;
     }
 
-    
+
 
     IEnumerator abilityCoolDownTimer2()
     {
@@ -254,71 +279,75 @@ public class MHAbilities : MonoBehaviour
 
     void Ability3()
     {
-        if (Input.GetKey(ability3) && !isCoolDown3)
+
+
+        if (Input.GetKeyDown(ability3) && !isCoolDown3)
         {
             addDamage();
             dmgCD = dmgCoolDown();
-            StartCoroutine(dmgCD);
-
-
+            abilityImage3.color = cdColor;
+            ability3CoolDown = ability3CD();
+            abilityTimer3 = abilityCoolDownTimer3();
+            StartCoroutine(ability3CoolDown);
+            StartCoroutine(abilityTimer3);
         }
 
-
-    }
-
-    void addDamage()
-    {
-        ability3Particles.Play();
-        newDamage = mrHan.attackDmg * 0.8f + mrHan.attackDmg;
-        mrHan.attackDmg = newDamage;
-        abilityImage3.color = cdColor;
-
-    }
-
-    IEnumerator dmgCoolDown()
-    {
-        yield return new WaitForSeconds(3);
-
-        ability3Particles.Stop();
-        mrHan.attackDmg = initialDmg;
-
-        isCoolDown3 = true;
-        abilityImage3.color = cdColor;
-        ability3CoolDown = ability3CD();
-        abilityTimer3 = abilityCoolDownTimer3();
-        StartCoroutine(abilityTimer3);
-        StartCoroutine(ability3CoolDown);
-    }
-
-    IEnumerator ability3CD()
-    {
-        yield return new WaitForSeconds(coolDown3);
-        isCoolDown3 = false;
-        abilityImage3.color = Color.white;
-    }
-
-    IEnumerator abilityCoolDownTimer3()
-    {
-        currentTime3 = coolDown3;
-        while (currentTime3 > 0)
+        void addDamage()
         {
-            yield return new WaitForSeconds(1f);
-            currentTime3 -= 1;
-            cd3.SetText(currentTime3.ToString());
-        }
-        cd3.SetText("");
+            ability3Particles.Play();
+            newDamage = mrHan.attackDmg * 0.8f + mrHan.attackDmg;
+            mrHan.attackDmg = newDamage;
+            abilityImage3.color = cdColor;
 
+        }
+
+
+
+        IEnumerator dmgCoolDown()
+        {
+            yield return new WaitForSeconds(3);
+            ability3Particles.Stop();
+            mrHan.attackDmg = initialDmg;
+            isCoolDown3 = true;
+
+
+        }
+
+        IEnumerator ability3CD()
+        {
+            StartCoroutine(dmgCD);
+            yield return new WaitForSeconds(coolDown3);
+            isCoolDown3 = false;
+            abilityImage3.color = Color.white;
+
+        }
+
+        IEnumerator abilityCoolDownTimer3()
+        {
+            currentTime3 = coolDown3;
+            while (currentTime3 > 0)
+            {
+                yield return new WaitForSeconds(1f);
+                currentTime3 -= 1;
+                cd3.SetText(currentTime3.ToString());
+
+            }
+            cd3.SetText("");
+            
+        }
+        
     }
 
     void Ability4()
     {
-        if (Input.GetKey(ability4) && !isCoolDown4)
+        if (Input.GetKeyDown(ability4) && !isCoolDown4)
         {
             skillShot2.gameObject.SetActive(true);
             skillShot1.gameObject.SetActive(false);
         }
         if (skillShot2.gameObject.activeSelf && Input.GetMouseButton(0))
         {
+            shootAbility4();
             isCoolDown4 = true;
             abilityImage4.color = cdColor;
             ability4CoolDown = ability4CD();
@@ -328,13 +357,26 @@ public class MHAbilities : MonoBehaviour
         }
     }
 
+    void shootAbility4()
+    {
+
+        if (ability4Prefab != null)
+        {
+            GameObject instantiatedAbility2 = Instantiate(ability4Prefab, ability2Canvas.transform.position, ability2Canvas.transform.rotation); 
+            Rigidbody abilityRB2 = instantiatedAbility2.GetComponent<Rigidbody>();
+            abilityRB2.AddForce(instantiatedAbility2.transform.forward * 10, ForceMode.Impulse);
+            StartCoroutine(BreakAfterDistance(instantiatedAbility2, 2f));
+        }
+
+    }
+
     IEnumerator ability4CD()
     {
         skillShot2.gameObject.SetActive(false);
         yield return new WaitForSeconds(coolDown4);
         isCoolDown4 = false;
         abilityImage4.color = Color.white;
-        
+
     }
 
     IEnumerator abilityCoolDownTimer4()
@@ -347,6 +389,7 @@ public class MHAbilities : MonoBehaviour
             cd4.SetText(currentTime4.ToString());
         }
         cd4.SetText("");
-    
+
+
     }
 }

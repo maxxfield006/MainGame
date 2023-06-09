@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.212}
+  m_AnchoredPosition: {x: 0, y: 0.768}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &57252838
@@ -306,7 +306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.04, y: -1.15}
+  m_AnchoredPosition: {x: 0.04, y: -0.42}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2063688697
@@ -1529,6 +1529,8 @@ MonoBehaviour:
   cdColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   abilityImage1: {fileID: 0}
   ability1: 113
+  ability1Prefab: {fileID: 8824723407478331102, guid: eb1dfaa631324fc4bae6668b98da5b45,
+    type: 3}
   ability1Canvas: {fileID: 57252838}
   skillShot1: {fileID: 2063688696}
   abilityImage2: {fileID: 0}
@@ -1537,6 +1539,8 @@ MonoBehaviour:
   ability3: 101
   abilityImage4: {fileID: 0}
   ability4: 114
+  ability4Prefab: {fileID: 5797681984814147419, guid: 1dfacb1dac5853e40a25ac0f6e7bc09b,
+    type: 3}
   ability2Canvas: {fileID: 628287363}
   skillShot2: {fileID: 2021277373}
 --- !u!114 &1067241160462191952
@@ -1823,7 +1827,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3838570950203243508, guid: 3581938cfc4ca5e45ac9521a76839747, type: 3}
 --- !u!1 &3926064193215968418
