@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
-using UnityEditorInternal;
+
 
 
 public class Register : MonoBehaviour

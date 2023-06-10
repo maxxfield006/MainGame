@@ -16,7 +16,6 @@ using SupportClassPun = ExitGames.Client.Photon.SupportClass;
 using UnityEngine.SceneManagement;
 
 
-
 #region Enums
 
 /// <summary>
@@ -833,7 +832,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
         #if !UNITY_EDITOR && (UNITY_WINRT)
         // this automatically uses a separate assembly-file with Win8-style Socket usage (not possible in Editor)
         Debug.LogWarning("Using PingWindowsStore");
-        PhotonHandler.PingImplementation = typeof(PingWindowsStore);    // but for ping, we have to set the implementation explicitly to Win 8 Store/Phone
+        PhotonHandler.PingImplementation = typeof(PingMono);    // but for ping, we have to set the implementation explicitly to Win 8 Store/Phone
         #endif
 
 
