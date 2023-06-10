@@ -10,7 +10,7 @@ public class bedTowers : MonoBehaviour
     public GameObject target;
 
     private float attackRange = 8f;
-    private float attackRate = 3f;
+    private float attackRate = 2.25f;
     private float bulletSpeed = 3;
 
     private float attackTimer;

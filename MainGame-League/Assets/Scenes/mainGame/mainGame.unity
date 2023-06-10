@@ -9776,14 +9776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5551ea066afa6914c9a27d19a3ce47c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueTowerBullet: {fileID: 3574904882123573426, guid: 9d729e2b6e714ff40ac441a681e6f54c,
-    type: 3}
-  blueTower1: {fileID: 2023633932}
-  blueTower2: {fileID: 1553318331}
-  attackRange: 0
-  attackRate: 2
-  attackTimer: 0
-  target: {fileID: 0}
 --- !u!1 &1766166332
 GameObject:
   m_ObjectHideFlags: 0
