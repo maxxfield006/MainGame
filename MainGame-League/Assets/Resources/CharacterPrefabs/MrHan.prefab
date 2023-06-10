@@ -1420,7 +1420,7 @@ GameObject:
   - component: {fileID: 4901342374145310167}
   m_Layer: 0
   m_Name: MrHan
-  m_TagString: Player
+  m_TagString: MrHan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,6 +1537,7 @@ MonoBehaviour:
   ability2: 119
   abilityImage3: {fileID: 0}
   ability3: 101
+  initialDmg: 0
   abilityImage4: {fileID: 0}
   ability4: 114
   ability4Prefab: {fileID: 5797681984814147419, guid: 1dfacb1dac5853e40a25ac0f6e7bc09b,
@@ -1604,9 +1605,7 @@ MonoBehaviour:
   targetedEnemy: {fileID: 0}
   attackRange: 2
   rotateSpeedForAttack: 0
-  basicAtkIdle: 0
-  isChampAlive: 0
-  performMeleeAttack: 1
+  isAttacking: 0
 --- !u!114 &4901342374145310167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1633,9 +1632,11 @@ MonoBehaviour:
   magicRes: 32
   armorScale: 6
   magicResScale: 7
+  moveSpeed: 1.9
   moveSpeedScale: 0.2
   healthBar: {fileID: 0}
   healthBar2D: {fileID: 0}
+  champNav: {fileID: 7698402375814920337}
 --- !u!1 &3555771085616179485
 GameObject:
   m_ObjectHideFlags: 0

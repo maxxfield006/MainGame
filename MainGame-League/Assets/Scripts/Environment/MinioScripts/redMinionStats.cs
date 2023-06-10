@@ -27,7 +27,6 @@ public class redMinionStats : MonoBehaviour
         {
             Destroy(gameObject);
             champCombatScript.targetedEnemy = null;
-            champCombatScript.performMeleeAttack = false;
         }
     }
 }

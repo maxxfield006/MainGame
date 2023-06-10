@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             if (champCombatScript.targetedEnemy.GetComponent<champCombat>() != null)
             {
-                if (champCombatScript.targetedEnemy.GetComponent<champCombat>().isChampAlive)
+                if (!champCombatScript.targetedEnemy.GetComponent<champCombat>().isAttacking)
                 {
                     champCombatScript.targetedEnemy = null;
                 }

@@ -14,6 +14,9 @@ TagManager:
   - FxTemporaire
   - ability3P
   - MrHanAbility1
+  - MrHan
+  - redBullet
+  - blueBullet
   layers:
   - Default
   - TransparentFX

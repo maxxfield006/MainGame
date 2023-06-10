@@ -9,7 +9,15 @@ public class InputTargeting : MonoBehaviour
     RaycastHit hit;
     void Start()
     {
-        selectedChamp = GameObject.FindWithTag("Player");
+        if (this.gameObject.CompareTag("MrHan")) 
+        {
+            selectedChamp = GameObject.FindWithTag("MrHan");
+        }
+        else
+        {
+            //selectedChamp = GameObject.FindWithTag("MrHan");
+        }
+       
 
     }
 

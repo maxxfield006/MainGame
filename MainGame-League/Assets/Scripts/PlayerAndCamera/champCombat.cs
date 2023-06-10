@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class champCombat : MonoBehaviour
 {
-    public enum ChampAttackType { Melee, Ranged};
+    public enum ChampAttackType { Melee, Ranged };
     public ChampAttackType champAttackType;
 
     public GameObject targetedEnemy;
@@ -13,30 +12,25 @@ public class champCombat : MonoBehaviour
     public float rotateSpeedForAttack;
 
     private PlayerController moveScript;
-
-    public bool basicAtkIdle = false;
-    public bool isChampAlive;
-    public bool performMeleeAttack = true;
-
-    MrHanStats statsScript;
-
+    private MrHanStats statsScript;
     private Animator anim;
-    void Start()
+
+    public bool isAttacking = false;
+
+    private void Start()
     {
         moveScript = GetComponent<PlayerController>();
-
         statsScript = GetComponent<MrHanStats>();
-
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (targetedEnemy != null)
         {
             if (Vector3.Distance(gameObject.transform.position, targetedEnemy.transform.position) > attackRange)
             {
+                // Move towards the enemy
                 moveScript.champ.SetDestination(targetedEnemy.transform.position);
                 moveScript.champ.stoppingDistance = attackRange;
 
@@ -44,34 +38,52 @@ public class champCombat : MonoBehaviour
                 float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref moveScript.rotateSpeed, moveScript.rotateMoveSpeed * (Time.deltaTime * 5));
 
                 transform.eulerAngles = new Vector3(0, rotationY, 0);
-            }
 
+                // Stop attacking
+                if (isAttacking)
+                {
+                    StopAttacking();
+                }
+            }
             else
             {
-                if (champAttackType == ChampAttackType.Melee)
+                // Attack the enemy
+                if (!isAttacking)
                 {
-                    if (performMeleeAttack)
-                    {
-                        StartCoroutine(MeleeAttackInterval());
-                    }
+                    StartAttacking();
                 }
+            }
+        }
+        else
+        {
+            // Stop attacking if there is no targeted enemy
+            if (isAttacking)
+            {
+                StopAttacking();
             }
         }
     }
 
-
-    IEnumerator MeleeAttackInterval()
+    private void StartAttacking()
     {
-        performMeleeAttack = false;
-        anim.SetBool("Basic Attack", true);
+        if (champAttackType == ChampAttackType.Melee)
+        {
+            anim.SetBool("Basic Attack", true);
+        }
+        // Add code for ranged attack here if needed
 
-        yield return new WaitForSeconds(statsScript.attackTime / ((100 + statsScript.attackTime) * 0.1f));
+        isAttacking = true;
+    }
 
-        if (targetedEnemy == null)
+    private void StopAttacking()
+    {
+        if (champAttackType == ChampAttackType.Melee)
         {
             anim.SetBool("Basic Attack", false);
-            performMeleeAttack = true;
         }
+        // Add code for stopping ranged attack here if needed
+
+        isAttacking = false;
     }
 
     public void MeleeAttack()
@@ -83,11 +95,6 @@ public class champCombat : MonoBehaviour
                 targetedEnemy.GetComponent<redMinionStats>().maxHealth -= statsScript.attackDmg;
             }
         }
-
-        performMeleeAttack = true;
     }
-
-
 }
 
-    

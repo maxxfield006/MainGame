@@ -66,7 +66,6 @@ public class MrHanStats : MonoBehaviour
         {
             Destroy(redMinionStatsScript.gameObject);
             champCombatScript.targetedEnemy = null;
-            champCombatScript.performMeleeAttack = false;
         }
     }
 
@@ -76,7 +75,6 @@ public class MrHanStats : MonoBehaviour
         {
             Destroy(blueMinionStatsScript.gameObject);
             champCombatScript.targetedEnemy = null;
-            champCombatScript.performMeleeAttack = false;
         }
     }
 }

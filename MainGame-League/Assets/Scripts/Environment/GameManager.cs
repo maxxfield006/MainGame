@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     public void onDaggerButtonClicked()
     {
         StartGame();
-        stats.attackSpeed -= 1;
+        stats.attackSpeed = 1.25f;
         champ.speed += 0.5f;
         abilities.initialDmg = 60;
     }
