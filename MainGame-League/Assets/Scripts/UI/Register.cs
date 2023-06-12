@@ -30,12 +30,6 @@ public class Register : MonoBehaviour
 
     void Start()
     {
-        //Finding the error message in hieracrchy
-        errorMsg = GameObject.Find("ErrorMSG").GetComponent<TMP_Text>();
-
-        //Finding the register and random name button
-        registerButton.onClick.AddListener(writeStuffToFile);
-        nameButton.onClick.AddListener(generateRandomName);
 
         //Checking if there is a file in specified pathing names credentials
         if (File.Exists(Application.dataPath + "/credentials.txt"))
@@ -51,7 +45,7 @@ public class Register : MonoBehaviour
     }
 
 
-    void writeStuffToFile()
+    public void writeStuffToFile()
     {
         int numCount = 0;
         int numCharCount = usernameInput.text.Length;
@@ -114,10 +108,12 @@ public class Register : MonoBehaviour
             credentials.Add(usernameInput.text + ":" + passwordInput.text);
             File.WriteAllLines(Application.dataPath + "/credentials.txt", (String[])credentials.ToArray(typeof(string)));
             errorMsg.SetText("Account Registered");
+            StartCoroutine(waitForSeconds());
+            SceneManager.LoadScene("mainGame");
         }
     }
 
-    void generateRandomName()
+    public void generateRandomName()
     {
         int randomNum = UnityEngine.Random.Range(0, 21);
         int randomNum1 = UnityEngine.Random.Range(0, 21);
@@ -133,6 +129,11 @@ public class Register : MonoBehaviour
         }
 
         usernameInput.SetTextWithoutNotify(finalName);
+    }
+
+    IEnumerator waitForSeconds()
+    {
+        yield return new WaitForSeconds(3);
     }
 
 

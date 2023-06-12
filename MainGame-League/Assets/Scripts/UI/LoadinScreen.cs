@@ -12,7 +12,6 @@ public class LoadinScreen : MonoBehaviour
      
     void Start()
     {
-        login.SetActive(false);
         register.SetActive(false);
     }
 

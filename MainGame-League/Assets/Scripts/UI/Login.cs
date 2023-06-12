@@ -58,17 +58,17 @@ public class Login : MonoBehaviour
         if (isExists)
         {
             loginMsg.SetText("Logging in " + usernameInput.text);
-            loadWelcomeScreen();
+            StartCoroutine(waitForSeconds());
+            SceneManager.LoadScene("mainGame");
+
         }
         else
         {
             loginMsg.SetText("Incorrect Username or Password");
         }
     }
-
-
-    void loadWelcomeScreen()
+    IEnumerator waitForSeconds()
     {
-        
+        yield return new WaitForSeconds(3);
     }
 }
