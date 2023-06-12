@@ -4,10 +4,13 @@ using System.Security;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject character;
+    public GameObject cam;
+    public Transform blueSpawn;
 
     public GameObject roundBackground;
     public GameObject botHud;
@@ -22,7 +25,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(hideOverLays());
-        //instantiateMrHan();
+
+        GameObject player = PhotonNetwork.Instantiate(character.name, blueSpawn.position, Quaternion.identity);
+        player.GetComponent<playerSetup>().isLocalPlayer();
+        Camera playerCam = PhotonNetwork.Instantiate(cam.name, blueSpawn.position, Quaternion.identity).GetComponent<Camera>();
+
         character.GetComponent<PlayerController>().enabled = false;
         character.GetComponent<MHAbilities>().enabled = false;
     }

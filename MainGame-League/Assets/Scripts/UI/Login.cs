@@ -59,7 +59,7 @@ public class Login : MonoBehaviour
         {
             loginMsg.SetText("Logging in " + usernameInput.text);
             StartCoroutine(waitForSeconds());
-            SceneManager.LoadScene("mainGame");
+            SceneManager.LoadScene("joinGame");
 
         }
         else

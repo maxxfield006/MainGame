@@ -109,7 +109,7 @@ public class Register : MonoBehaviour
             File.WriteAllLines(Application.dataPath + "/credentials.txt", (String[])credentials.ToArray(typeof(string)));
             errorMsg.SetText("Account Registered");
             StartCoroutine(waitForSeconds());
-            SceneManager.LoadScene("mainGame");
+            SceneManager.LoadScene("joinGame");
         }
     }
 
