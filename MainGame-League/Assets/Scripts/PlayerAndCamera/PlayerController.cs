@@ -2,22 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector]
     public NavMeshAgent champ;
+    [HideInInspector]
     public Rigidbody rb;
+
+    public GameObject mrHanGameObject;
 
     public float rotateSpeed;
     public float rotateMoveSpeed = 0.1f;
 
-    private champCombat champCombatScript;
+    [HideInInspector]
+    public champCombat champCombatScript;
 
     void Start()
     {
         champ = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         champCombatScript = GetComponent<champCombat>();
+        mrHanGameObject = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -41,7 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100)) 
+            if (Physics.Raycast(GameObject.FindGameObjectWithTag("PlayerCam").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition), out hit, 100)) 
             {
                 if (hit.collider.tag == "floor")
                 {

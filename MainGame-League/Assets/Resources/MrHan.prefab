@@ -1464,8 +1464,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   champ: {fileID: 7698402375814920337}
   rb: {fileID: 5023853142950075825}
+  mrHanGameObject: {fileID: 3051672311347619015}
   rotateSpeed: 30
   rotateMoveSpeed: 1
+  champCombatScript: {fileID: 0}
 --- !u!195 &7698402375814920337
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1476,7 +1478,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.9
+  m_Speed: 9
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 700
@@ -1541,7 +1543,7 @@ MonoBehaviour:
   ability2: 119
   abilityImage3: {fileID: 0}
   ability3: 101
-  initialDmg: 0
+  initialDmg: 60
   abilityImage4: {fileID: 0}
   ability4: 114
   ability4Prefab: {fileID: 5797681984814147419, guid: 1dfacb1dac5853e40a25ac0f6e7bc09b,
@@ -1622,14 +1624,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2691370d9989642b23fa23f873f852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 800
+  health: 1000
   healthReg: 2
   healthScale: 110
   healthRegScale: 0.3
-  attackDmg: 60
+  attackDmg: 110
   attackDmgScale: 12
-  attackSpeed: 1
-  attackTime: 2
+  attackSpeed: 1.25
+  attackTime: 1.9
   attackSpeedScale: 0.05
   critChance: 0
   armor: 28
@@ -1656,11 +1658,12 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
+  observableSearch: 2
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 882022890195460416}
+  - {fileID: 8776288740709203334}
   sceneViewId: 0
   InstantiationId: -1
   isRuntimeInstantiated: 0
@@ -1678,7 +1681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 0
   m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &8776288740709203334
 MonoBehaviour:

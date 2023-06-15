@@ -17,6 +17,7 @@ TagManager:
   - MrHan
   - redBullet
   - blueBullet
+  - PlayerCam
   layers:
   - Default
   - TransparentFX

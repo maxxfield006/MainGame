@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private GameObject player;
-
+    public GameObject player;
+    private PlayerController playerController;
     //offset the camera to see player better
     public float offsetX = 0;
     public float offsetZ = -12.25f;
@@ -13,13 +13,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
         player = GameObject.FindWithTag("MrHan");
+
         //makes the camera only follow the x and z, so when moving it doesnt rotate the camera or change the height
         transform.position = new Vector3(player.transform.position.x + offsetX, player.transform.position.y + offsetY, player.transform.position.z + offsetZ);
     }

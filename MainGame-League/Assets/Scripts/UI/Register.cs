@@ -7,8 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
-
-
+using System.Diagnostics;
 
 public class Register : MonoBehaviour
 {
@@ -109,7 +108,7 @@ public class Register : MonoBehaviour
             File.WriteAllLines(Application.dataPath + "/credentials.txt", (String[])credentials.ToArray(typeof(string)));
             errorMsg.SetText("Account Registered");
             StartCoroutine(waitForSeconds());
-            SceneManager.LoadScene("joinGame");
+            SceneManager.LoadScene("ConnectToLobby");
         }
     }
 

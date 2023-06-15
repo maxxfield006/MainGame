@@ -3,12 +3,15 @@ using UnityEngine.UI;
 using Photon.Pun;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Photon.Pun.Demo.Cockpit.Forms;
 
 public class networkManager : MonoBehaviourPunCallbacks
 {
     int state = 0;
+    int numOfPlayersReady = 0;
 
     bool inQueue = false;
+    bool readyBool = false;
 
     public int maxPlayers;
 
@@ -16,12 +19,7 @@ public class networkManager : MonoBehaviourPunCallbacks
     int minutes;
     int seconds;
 
-    public GameObject mrHan;
-    public Camera cam;
-
     [SerializeField]
-    private Transform spawnPosition;
-
     public GameObject joinGameButton;
     public GameObject findMatchButton;
     public GameObject readyButton;
@@ -29,17 +27,25 @@ public class networkManager : MonoBehaviourPunCallbacks
 
     public TMP_Text queueTimer;
 
+    public GameObject MrHan;
+    public GameObject Camera;
+    public Transform blueSpawn;
+
+    public Scene mainGame;
     void Start()
     {
+        PhotonNetwork.ConnectUsingSettings();
+
         findMatchButton.SetActive(false);
         readyButton.SetActive(false);
-
+        
         state = 0;
+        //numOfPlayersReady = 0;
     }
 
     void Update()
     {
-        if (state == 5)
+        if (state == 3)
         {
             currentTime += Time.deltaTime;
             minutes = (int)(currentTime / 60);
@@ -50,6 +56,10 @@ public class networkManager : MonoBehaviourPunCallbacks
         {
             queueTimer.SetText("Waiting for players...(" + PhotonNetwork.PlayerList.Length.ToString() + "/" + maxPlayers + ")");
         }
+        if (readyBool)
+        {
+            queueTimer.SetText("Players Ready: " + numOfPlayersReady + "/" + maxPlayers);
+        }
 
         if (PhotonNetwork.InRoom == true && PhotonNetwork.PlayerList.Length == maxPlayers)
         {
@@ -59,52 +69,63 @@ public class networkManager : MonoBehaviourPunCallbacks
       
     }
 
+
     public void JoinGame()
     {
-        PhotonNetwork.ConnectUsingSettings();
         findMatchButton.SetActive(true);
         joinGameButton.SetActive(false);
-        state = 4;
     }
 
     public void FindMatch()
     {
-        PhotonNetwork.JoinRandomRoom();
-       
-        findMatchButton.SetActive(false);
-        readyButton.SetActive(true);
-        state = 5;
-        inQueue = true;
+        if (state == 2)
+        {
+            base.OnJoinedLobby();
+            PhotonNetwork.JoinOrCreateRoom("test", null, null);
+            findMatchButton.SetActive(false);
+            readyButton.SetActive(true);
+            inQueue = true;
+        }
 
     }
 
     public void Ready()
     {
 
-        if (PhotonNetwork.InRoom == true && PhotonNetwork.PlayerList.Length == maxPlayers)
+        if (state == 1 && !readyBool && PhotonNetwork.PlayerList.Length == maxPlayers)
         {
-            SceneManager.LoadScene("mainGame", LoadSceneMode.Single);
-            Debug.Log("Shit should be working");
+            numOfPlayersReady ++;
+            inQueue = false;
+            readyBool = true;
+
+            if (numOfPlayersReady == maxPlayers)
+            {
+                base.OnJoinedRoom();
+                GameObject player = PhotonNetwork.Instantiate(MrHan.name, blueSpawn.position, Quaternion.identity);
+                player.GetComponent<playerSetup>().isLocalPlayer();
+                Camera playerCam = PhotonNetwork.Instantiate(Camera.name, blueSpawn.position, Quaternion.identity).GetComponent<Camera>();
+            }
         }
-        
+        Debug.Log(numOfPlayersReady);
     }
 
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
-        state = 1;
         PhotonNetwork.JoinLobby();
+
     }
 
     public override void OnJoinedLobby()
     {
-        base.OnJoinedLobby();
-        PhotonNetwork.JoinOrCreateRoom("test", null, null);
         state = 2;
     }
 
-    void StartGame()
+    public override void OnJoinedRoom()
     {
-        
+        state = 1;
+
     }
+
+    
 }

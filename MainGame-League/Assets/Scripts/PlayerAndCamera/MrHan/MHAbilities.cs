@@ -106,8 +106,8 @@ public class MHAbilities : MonoBehaviour
         abilityImage4 = GameObject.Find("SoySauceTsunami").GetComponent<RawImage>();
 
 
-        player1 = GameObject.FindWithTag("MrHan").transform;
-        player2 = GameObject.FindWithTag("MrHan").transform;
+        player1 = GetComponent<GameObject>().GetComponent<Transform>();
+       
 
         skillShot1.gameObject.SetActive(false);
         skillShot2.gameObject.SetActive(false);

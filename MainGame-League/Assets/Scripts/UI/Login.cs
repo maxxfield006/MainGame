@@ -15,6 +15,9 @@ public class Login : MonoBehaviour
     public Button loginButton;
     public TMP_Text loginMsg;
 
+    [HideInInspector]
+    public bool isLoggingIn = true;
+
 
     ArrayList credentials;
 
@@ -36,10 +39,11 @@ public class Login : MonoBehaviour
 
 
 
-    // Update is called once per frame
+    
     void login()
     {
         bool isExists = false;
+        isLoggingIn = true;
 
         credentials = new ArrayList(File.ReadAllLines(Application.dataPath + "/credentials.txt"));
 
@@ -59,7 +63,7 @@ public class Login : MonoBehaviour
         {
             loginMsg.SetText("Logging in " + usernameInput.text);
             StartCoroutine(waitForSeconds());
-            SceneManager.LoadScene("joinGame");
+            SceneManager.LoadScene("ConnectToLobby");
 
         }
         else

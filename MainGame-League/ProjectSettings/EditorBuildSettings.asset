@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/ConnectToGame.unity
+    guid: 60cb7e7911338b84baf42d9621aceaac
   - enabled: 1
     path: Assets/Scenes/login.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/joinGame.unity
+    path: Assets/Scenes/ConnectToLobby.unity
     guid: d2a98629f2f147641a8d806c951966bc
   - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 23d041004b7d50c4493592f95b1c1011
+  - enabled: 0
     path: Assets/Scenes/mainGame/mainGame.unity
     guid: d4e6eadc129f1f44599bf937a89215b1
   - enabled: 0
@@ -20,9 +26,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Photon/PhotonChat/Demos/DemoChat/DemoChat-Scene.unity
     guid: ec07267f6a28fb044ac89845274e79af
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Launcher.unity
     guid: bff77b01b50254edbb6edeeaba5ae8b3
@@ -42,7 +45,4 @@ EditorBuildSettings:
     path: Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scenes/PunBasics-Room
       for 4.unity
     guid: e7a7f9734636d415ca84ef3aaf7680f6
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

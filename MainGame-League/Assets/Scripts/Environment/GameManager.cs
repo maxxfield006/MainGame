@@ -25,19 +25,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(hideOverLays());
-
-        GameObject player = PhotonNetwork.Instantiate(character.name, blueSpawn.position, Quaternion.identity);
-        player.GetComponent<playerSetup>().isLocalPlayer();
-        Camera playerCam = PhotonNetwork.Instantiate(cam.name, blueSpawn.position, Quaternion.identity).GetComponent<Camera>();
-
-        character.GetComponent<PlayerController>().enabled = false;
-        character.GetComponent<MHAbilities>().enabled = false;
+        //character.GetComponent<PlayerController>().enabled = false;
+        //character.GetComponent<MHAbilities>().enabled = false;
     }
 
-    void instantiateMrHan()
-    {
-        Instantiate(character, new Vector3(0, 0, 0), character.transform.rotation);
-    }
 
     void StartGame()
     {
