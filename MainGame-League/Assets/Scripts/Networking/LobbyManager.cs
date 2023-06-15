@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using System;
+using System.Runtime.CompilerServices;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
@@ -18,6 +20,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     List<RoomItem> roomItemsList = new List<RoomItem>();
     public Transform contentObject;
 
+    private float timeBetweenUpdates = 1.5f;
+    private float nextUpdateTime;
     private void Start()
     {
         PhotonNetwork.JoinLobby();
@@ -44,6 +48,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         base.OnRoomListUpdate(roomList);
 
         UpdateRoomList(roomList);
+
+        if (Time.time >= nextUpdateTime)
+        {
+            
+            nextUpdateTime = Time.time + timeBetweenUpdates;
+        }
+        
     }
 
     void UpdateRoomList(List<RoomInfo> list)
@@ -79,5 +90,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomPanel.SetActive(false);
         lobbyPanel.SetActive(true);
         
+    }
+
+
+    public override void OnConnectedToMaster()
+    {
+        base.OnConnectedToMaster();
+        PhotonNetwork.JoinLobby();
     }
 }
