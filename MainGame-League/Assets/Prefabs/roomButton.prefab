@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4301508013907647038}
   - component: {fileID: 2351241793919401708}
   - component: {fileID: 7508151345152134924}
-  - component: {fileID: 4298014929673907150}
+  - component: {fileID: 7604436731508108814}
   m_Layer: 5
   m_Name: roomButton
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4298014929673907150}
+      - m_Target: {fileID: 7604436731508108814}
         m_MethodName: OnClickRoom
         m_Mode: 1
         m_Arguments:
@@ -131,7 +131,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4298014929673907150
+--- !u!114 &7604436731508108814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6589133966054824716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00648edba34a9f24cac180ec7f8dc4e1, type: 3}
+  m_Script: {fileID: 11500000, guid: ec8498194f93ee041a16356c8ff8ff5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomName: {fileID: 8218236605040102619}

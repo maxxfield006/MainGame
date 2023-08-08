@@ -18,6 +18,7 @@ TagManager:
   - redBullet
   - blueBullet
   - PlayerCam
+  - PostProcessing
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 
